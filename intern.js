@@ -428,5 +428,10 @@
     setInterval(() => { if (!document.hidden) load().catch(() => {}); }, 30000);
     document.addEventListener('visibilitychange', () => { if (!document.hidden) load().catch(() => {}); });
   }
+  // Sættes nøglen ind i adresselinjen bagefter, genindlæser browseren ikke selv siden.
+  window.addEventListener('hashchange', () => {
+    const k = new URLSearchParams(location.hash.slice(1)).get('k');
+    if (k && k !== key) location.reload();
+  });
   start();
 })();
