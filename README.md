@@ -9,3 +9,7 @@ Ting der skal opdateres senere:
 - Bookingformularen sender endnu ikke data nogen steder hen. Den udsender et `friday:booking`-event med formularens data, klar til at blive koblet på det interne system.
 - CVR, adresse, telefon og e-mail i footeren.
 - Cases og kundeudtalelser.
+
+## Billeder
+
+Fotos er fra [Unsplash](https://unsplash.com) (fri licens) og hentes direkte fra images.unsplash.com. Fotografer: Pablo Pacheco, Keghan Crossland, Jason Leung, Steph Quernemoen, Roberto Cortese, Björn Antonissen, Christopher Gower, Louis Hansel, Anete Lūsiņa og Priscilla Du Preez.

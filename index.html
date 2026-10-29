@@ -185,9 +185,6 @@ h3{font-size:clamp(20px,1.8vw,24px);letter-spacing:-.015em}
 .svc.open .svc-inner > *:nth-child(3){transition-delay:.16s}
 /* service visuals */
 .v-web{background:linear-gradient(135deg,#E2F6EA,#F7EBDD)}
-.v-web .bw{position:absolute;left:12%;right:12%;top:16%;bottom:-10%;background:#fff;border-radius:10px 10px 0 0;box-shadow:0 10px 30px -10px rgba(0,0,0,.3)}
-.v-web .bw::before{content:"";position:absolute;left:10px;top:9px;width:28px;height:6px;border-radius:3px;background:radial-gradient(circle at 3px 3px,#FF5F57 3px,transparent 3.5px),radial-gradient(circle at 13px 3px,#FEBC2E 3px,transparent 3.5px),radial-gradient(circle at 23px 3px,#28C840 3px,transparent 3.5px)}
-.v-web .bw::after{content:"";position:absolute;left:10px;right:10px;top:26px;bottom:0;border-radius:6px;background:linear-gradient(120deg,#0F1F1A 0 45%,#A8E6C1 45% 46%,#ECEFF4 46%)}
 .v-order{background:linear-gradient(135deg,#E2F6EA,#C7EDD6)}
 .v-sys{background:#1F232B}
 .v-gfx{background:linear-gradient(135deg,#F7EBDD,#E2F6EA)}
@@ -354,6 +351,24 @@ footer{margin-top:clamp(40px,6vw,80px);padding-top:28px;border-top:1px solid var
 .giant{font-family:var(--font-head);font-weight:700;letter-spacing:-.06em;font-size:clamp(48px,12.2vw,186px);line-height:.8;margin-top:clamp(40px,6vw,80px);color:transparent;background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,0) 85%);-webkit-background-clip:text;background-clip:text;white-space:nowrap;user-select:none}
 .logo.light{color:#fff}
 
+
+/* ---------- PHOTOS ---------- */
+.who-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.who{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:3/4;background:var(--accent-soft)}
+.who img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.who:hover img{transform:scale(1.06)}
+.who::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(15,31,26,.45))}
+.pill{position:absolute;left:14px;bottom:14px;z-index:1;background:#fff;color:var(--ink);font-size:13.5px;font-weight:500;padding:7px 14px;border-radius:999px}
+.who p{position:absolute;left:14px;right:14px;bottom:52px;z-index:1;color:#fff;font-size:14px;line-height:1.4;opacity:0;transform:translateY(10px);transition:opacity .5s,transform .6s var(--ease)}
+.who:hover p{opacity:1;transform:none}
+.svc-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.team-photo{margin-top:28px;border-radius:20px;overflow:hidden;aspect-ratio:16/10;background:var(--accent-soft)}
+.team-photo img{width:100%;height:100%;object-fit:cover}
+.contact-photo{margin-top:32px;border-radius:18px;overflow:hidden;aspect-ratio:16/9;max-width:440px;opacity:.9}
+.contact-photo img{width:100%;height:100%;object-fit:cover}
+@media (max-width:1100px){.who-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.who p{display:none}}
+
 /* ---------- REVEAL ANIMATIONS ---------- */
 .reveal{opacity:0;transform:translateY(30px);filter:blur(10px);transition:opacity 1s var(--ease),transform 1s var(--ease),filter 1s var(--ease)}
 .reveal.in{opacity:1;transform:none;filter:none}
@@ -439,6 +454,7 @@ footer{margin-top:clamp(40px,6vw,80px);padding-top:28px;border-top:1px solid var
         <span>FRIDAY <small>studio</small></span>
       </a>
       <nav class="nav-links" aria-label="Hovedmenu">
+        <a href="#kunder">Kunder</a>
         <a href="#ydelser">Ydelser</a>
         <a href="#demo">Prøv et ordresystem</a>
         <a href="#proces">Proces</a>
@@ -517,6 +533,23 @@ footer{margin-top:clamp(40px,6vw,80px);padding-top:28px;border-top:1px solid var
     </div>
   </section>
 
+  <!-- WHO WE HELP -->
+  <section class="section white" id="kunder">
+    <div class="sec-head">
+      <div>
+        <span class="label">Hvem vi hjælper</span>
+        <h2 class="split" style="margin-top:18px">Bygget til små virksomheder</h2>
+      </div>
+      <p class="reveal">Vi kender hverdagen i små virksomheder. Derfor laver vi løsninger, der er nemme at bruge og hurtigt betaler sig selv hjem.</p>
+    </div>
+    <div class="who-grid stagger">
+      <div class="who"><img src="https://images.unsplash.com/photo-1593504049359-74330189a345?auto=format&fit=crop&w=700&q=75" alt="Pizza med ost tæt på" loading="lazy"><p>Online bestilling uden gebyrer til mellemmænd.</p><span class="pill">Pizzeriaer</span></div>
+      <div class="who"><img src="https://images.unsplash.com/photo-1567880905822-56f8e06fe630?auto=format&fit=crop&w=700&q=75" alt="Moderne café med buet disk" loading="lazy"><p>Hjemmeside, menukort og bestilling til takeaway.</p><span class="pill">Caféer</span></div>
+      <div class="who"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=700&q=75" alt="Lys restaurant med borde" loading="lazy"><p>Bordbestilling og en hjemmeside, der fylder stolene.</p><span class="pill">Restauranter</span></div>
+      <div class="who"><img src="https://images.unsplash.com/photo-1761783536272-2fb78dd52c76?auto=format&fit=crop&w=700&q=75" alt="Skilt i vindue: Thank you for supporting local" loading="lazy"><p>Synlighed online og systemer, der sparer tid.</p><span class="pill">Små butikker</span></div>
+    </div>
+  </section>
+
   <!-- SERVICES -->
   <section class="section dark" id="ydelser">
     <div class="sec-head">
@@ -533,7 +566,7 @@ footer{margin-top:clamp(40px,6vw,80px);padding-top:28px;border-top:1px solid var
         </button>
         <div class="svc-body"><div><div class="svc-inner">
           <p>Hurtige, flotte hjemmesider, der er nemme at finde på Google og nemme for dig at opdatere. Bygget til mobilen først, fordi det er der, dine kunder er.</p>
-          <div class="svc-visual v-web"><div class="bw"></div></div>
+          <div class="svc-visual v-web"><img src="https://images.unsplash.com/photo-1586880244406-556ebe35f282?auto=format&fit=crop&w=700&q=75" alt="Person arbejder på en bærbar ved et hvidt bord" loading="lazy"></div>
           <ul class="svc-checks"><li>Design efter dit brand</li><li>Mobilvenlig og hurtig</li><li>Google-optimeret (SEO)</li><li>Menukort, åbningstider og kort</li><li>Hosting og domæne sat op</li></ul>
         </div></div></div>
       </div>
@@ -545,9 +578,7 @@ footer{margin-top:clamp(40px,6vw,80px);padding-top:28px;border-top:1px solid var
         </button>
         <div class="svc-body"><div><div class="svc-inner">
           <p>Dit eget bestillingssystem til pizzeria, café eller restaurant. Kunderne bestiller direkte hos dig, og du slipper for høje gebyrer til mellemmænd.</p>
-          <div class="svc-visual v-order">
-            <svg viewBox="0 0 300 170" style="position:absolute;inset:0;width:100%;height:100%"><rect x="40" y="22" width="120" height="150" rx="14" fill="#fff"/><rect x="52" y="36" width="60" height="8" rx="4" fill="#0F1F1A"/><rect x="52" y="56" width="96" height="26" rx="7" fill="#ECEFF4"/><rect x="52" y="88" width="96" height="26" rx="7" fill="#ECEFF4"/><rect x="52" y="120" width="96" height="26" rx="7" fill="#ECEFF4"/><circle cx="136" cy="69" r="7" fill="#A8E6C1"/><circle cx="136" cy="101" r="7" fill="#0F1F1A"/><circle cx="136" cy="133" r="7" fill="#0F1F1A"/><rect x="172" y="40" width="100" height="60" rx="12" fill="#0F1F1A"/><rect x="184" y="52" width="40" height="6" rx="3" fill="#A8E6C1"/><rect x="184" y="66" width="70" height="5" rx="2.5" fill="#555"/><rect x="184" y="78" width="54" height="5" rx="2.5" fill="#555"/></svg>
-          </div>
+          <div class="svc-visual v-order"><img src="https://images.unsplash.com/photo-1555596098-9b19f458ed19?auto=format&fit=crop&w=700&q=75" alt="Hånd der holder en tablet" loading="lazy"></div>
           <ul class="svc-checks"><li>Online bestilling</li><li>Køkkenskærm i realtid</li><li>Afhentning og levering</li><li>Bordbestilling</li><li>Ingen gebyr pr. ordre</li></ul>
         </div></div></div>
       </div>
@@ -559,9 +590,7 @@ footer{margin-top:clamp(40px,6vw,80px);padding-top:28px;border-top:1px solid var
         </button>
         <div class="svc-body"><div><div class="svc-inner">
           <p>Har du en idé eller et problem, der kræver et system? Vi bygger det meste: bookingsystemer, lagerstyring, interne værktøjer og integrationer.</p>
-          <div class="svc-visual v-sys">
-            <svg viewBox="0 0 300 170" style="position:absolute;inset:0;width:100%;height:100%" font-family="monospace" font-size="11"><text x="22" y="36" fill="#7D8494">// booking.ts</text><text x="22" y="58" fill="#6EA4FF">const</text><text x="64" y="58" fill="#fff">slot = await</text><text x="22" y="78" fill="#fff">  findFreeTable(</text><text x="22" y="98" fill="#9C93F5">    guests: 4,</text><text x="22" y="118" fill="#9C93F5">    time: "19:00"</text><text x="22" y="138" fill="#fff">  );</text><rect x="210" y="110" width="68" height="36" rx="10" fill="#22C55E" opacity=".16"/><text x="222" y="132" fill="#4ADE80">✓ ledig</text></svg>
-          </div>
+          <div class="svc-visual v-sys"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=700&q=75" alt="Bærbar med kode på skærmen" loading="lazy"></div>
           <ul class="svc-checks"><li>Booking og kalender</li><li>Lager og indkøb</li><li>Kundeklubber og loyalitet</li><li>Dashboards og rapporter</li><li>Integration med kasse</li></ul>
         </div></div></div>
       </div>
@@ -573,9 +602,7 @@ footer{margin-top:clamp(40px,6vw,80px);padding-top:28px;border-top:1px solid var
         </button>
         <div class="svc-body"><div><div class="svc-inner">
           <p>Et stærkt logo og en sammenhængende visuel identitet, der går igen på skiltet, menukortet, flyeren og hjemmesiden. Leveret trykklart.</p>
-          <div class="svc-visual v-gfx">
-            <svg viewBox="0 0 300 170" style="position:absolute;inset:0;width:100%;height:100%"><rect x="34" y="30" width="86" height="118" rx="8" fill="#fff" transform="rotate(-6 77 89)"/><circle cx="74" cy="66" r="14" fill="#A8E6C1" transform="rotate(-6 77 89)"/><rect x="50" y="92" width="54" height="5" rx="2.5" fill="#0F1F1A" transform="rotate(-6 77 89)"/><rect x="50" y="104" width="40" height="4" rx="2" fill="#B4BAC6" transform="rotate(-6 77 89)"/><rect x="128" y="22" width="86" height="124" rx="8" fill="#0F1F1A"/><text x="171" y="58" text-anchor="middle" fill="#fff" font-family="Manrope,sans-serif" font-weight="700" font-size="14">MENU</text><rect x="142" y="74" width="58" height="4" rx="2" fill="#555"/><rect x="142" y="86" width="44" height="4" rx="2" fill="#555"/><rect x="142" y="98" width="52" height="4" rx="2" fill="#555"/><rect x="224" y="42" width="56" height="56" rx="16" fill="#A8E6C1"/><g transform="translate(228 46) scale(.75)"><g fill="#0F1F1A"><path d="M13 54V24a14 14 0 0 1 14-14h17v13H27v7h12a6 6 0 0 1 0 12H27v12Z"/><path d="M45 23c0-8.5 5.5-13.5 13-13.5 0 8.5-5.5 13.5-13 13.5Z"/></g></g></svg>
-          </div>
+          <div class="svc-visual v-gfx"><img src="https://images.unsplash.com/photo-1557499305-bd68d0ad468d?auto=format&fit=crop&w=700&q=75" alt="Menukort i papir" loading="lazy"></div>
           <ul class="svc-checks"><li>Logo og visuel identitet</li><li>Menukort</li><li>Flyers og plakater</li><li>Skilte og visitkort</li><li>Sociale medier</li></ul>
         </div></div></div>
       </div>
@@ -649,6 +676,7 @@ footer{margin-top:clamp(40px,6vw,80px);padding-top:28px;border-top:1px solid var
         <h2 class="split" style="margin-top:18px">Holdet bag FRIDAY studio</h2>
         <p class="reveal">Bag FRIDAY studio står et hold, der sidder klar til at hjælpe dig, fra det første møde til længe efter lanceringen. Vi taler ikke i tekniske termer. Vi løser dine problemer.</p>
         <a href="#kontakt" class="btn btn-dark reveal">Mød os til en snak <span class="arr">→</span></a>
+        <div class="team-photo reveal"><img src="https://images.unsplash.com/photo-1522199755839-a2bacb67c546?auto=format&fit=crop&w=1000&q=75" alt="Bærbar og kaffekop på et bord" loading="lazy"></div>
       </div>
       <div class="roles stagger">
         <div class="role big">
@@ -741,6 +769,7 @@ footer{margin-top:clamp(40px,6vw,80px);padding-top:28px;border-top:1px solid var
           <li><span>⏱</span>Ca. 30 minutter, online eller fysisk</li>
           <li><span>📄</span>Du får et konkret oplæg bagefter</li>
         </ul>
+        <div class="contact-photo reveal"><img src="https://images.unsplash.com/photo-1604881988758-f76ad2f7aac1?auto=format&fit=crop&w=900&q=75" alt="To personer med kaffekopper ved et bord" loading="lazy"></div>
       </div>
 
       <form class="book" id="bookForm" novalidate>
