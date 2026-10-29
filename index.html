@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=5">
+<link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body class="load">
 
@@ -266,49 +266,51 @@
   <section class="section dark" id="kontakt">
     <div class="contact-grid" id="contactGrid">
       <div class="contact-left">
-        <h2 class="split">Har du et projekt i tankerne? <span class="dim">Lad os tage en snak.</span></h2>
-        <p class="reveal">Fortæl kort, hvad du drømmer om, og vælg et tidspunkt. Vi vender tilbage inden for 24 timer på hverdage og bekræfter mødet.</p>
+        <h2 class="split">Book et gratis møde</h2>
+        <p class="reveal">Fortæl kort om din forretning, og vælg et tidspunkt, der passer dig. Vi vender tilbage inden for 24 timer på hverdage.</p>
         <ul class="perks reveal">
-          <li><span>☕</span>Gratis og uforpligtende</li>
-          <li><span>⏱</span>Ca. 30 minutter, online eller fysisk</li>
-          <li><span>📄</span>Du får et konkret oplæg bagefter</li>
+          <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span>Gratis og uforpligtende</li>
+          <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span>Ca. 30 minutter, online eller hos dig</li>
+          <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span>Du får et konkret oplæg med fast pris</li>
         </ul>
-        <div class="contact-photo reveal"><img src="https://images.unsplash.com/photo-1604881988758-f76ad2f7aac1?auto=format&fit=crop&w=900&q=75" alt="To personer med kaffekopper ved et bord" loading="lazy"></div>
       </div>
 
-      <form class="book" id="bookForm" novalidate>
-        <div class="row2">
-          <div class="field"><input id="fName" name="navn" placeholder=" " required autocomplete="name"><label for="fName">Fulde navn*</label></div>
-          <div class="field"><input id="fCompany" name="virksomhed" placeholder=" " autocomplete="organization"><label for="fCompany">Virksomhed</label></div>
-        </div>
-        <div class="row2">
-          <div class="field"><input id="fEmail" name="email" type="email" placeholder=" " required autocomplete="email"><label for="fEmail">E-mail*</label></div>
-          <div class="field"><input id="fPhone" name="telefon" type="tel" placeholder=" " required autocomplete="tel"><label for="fPhone">Telefon*</label></div>
-        </div>
-        <div class="chips-label">Hvad drejer det sig om?</div>
-        <div class="chips" id="topics">
-          <button type="button" class="chip">Hjemmeside</button>
-          <button type="button" class="chip">Ordresystem</button>
-          <button type="button" class="chip">Skræddersyet system</button>
-          <button type="button" class="chip">Grafisk design</button>
-          <button type="button" class="chip">Ved ikke endnu</button>
-        </div>
-        <div class="row2" style="margin-top:6px">
-          <div class="field always"><input id="fDate" name="dato" type="date"><label for="fDate">Foretrukken dato</label></div>
-          <div class="field always">
-            <select id="fTime" name="tid"><option>Formiddag (9–12)</option><option>Eftermiddag (12–16)</option><option>Sen eftermiddag (16–18)</option></select>
-            <label for="fTime">Tidspunkt</label>
+      <div class="book-card reveal">
+        <form class="book" id="bookForm" novalidate>
+          <div class="row2">
+            <div class="field"><label for="fName">Navn *</label><input id="fName" name="navn" required autocomplete="name" placeholder="Dit fulde navn"></div>
+            <div class="field"><label for="fCompany">Virksomhed</label><input id="fCompany" name="virksomhed" autocomplete="organization" placeholder="Fx Pizzeria Bella"></div>
           </div>
-        </div>
-        <div class="field"><textarea id="fMsg" name="besked" rows="3" placeholder=" "></textarea><label for="fMsg">Fortæl kort om dit projekt</label></div>
-        <button class="btn btn-accent" type="submit">Book mødet <span class="arr">→</span></button>
-        <div class="form-msg" id="formMsg" role="alert"></div>
-      </form>
+          <div class="row2">
+            <div class="field"><label for="fEmail">E-mail *</label><input id="fEmail" name="email" type="email" required autocomplete="email" placeholder="navn@firma.dk"></div>
+            <div class="field"><label for="fPhone">Telefon *</label><input id="fPhone" name="telefon" type="tel" required autocomplete="tel" placeholder="12 34 56 78"></div>
+          </div>
+          <div class="field">
+            <span class="flabel">Hvad drejer det sig om?</span>
+            <div class="chips" id="topics">
+              <button type="button" class="chip">Hjemmeside</button>
+              <button type="button" class="chip">Ordresystem</button>
+              <button type="button" class="chip">Skræddersyet system</button>
+              <button type="button" class="chip">Grafisk design</button>
+              <button type="button" class="chip">Ved ikke endnu</button>
+            </div>
+          </div>
+          <div class="row2">
+            <div class="field"><label for="fDate">Foretrukken dato</label><input id="fDate" name="dato" type="date"></div>
+            <div class="field"><label for="fTime">Tidspunkt</label>
+              <select id="fTime" name="tid"><option>Formiddag (9–12)</option><option>Eftermiddag (12–16)</option><option>Sen eftermiddag (16–18)</option></select>
+            </div>
+          </div>
+          <div class="field"><label for="fMsg">Besked</label><textarea id="fMsg" name="besked" rows="3" placeholder="Fortæl kort om dit projekt"></textarea></div>
+          <button class="btn btn-accent" type="submit">Book gratis møde <span class="arr">→</span></button>
+          <div class="form-msg" id="formMsg" role="alert"></div>
+        </form>
 
-      <div class="success" role="status">
-        <div class="ck"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0F1F1A" stroke-width="2.4"><path d="m5 12 5 5 9-10"/></svg></div>
-        <h3>Tak! Din forespørgsel er modtaget.</h3>
-        <p id="successText">Vi vender tilbage inden for 24 timer på hverdage og bekræfter dit møde.</p>
+        <div class="success" role="status">
+          <div class="ck"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0F1F1A" stroke-width="2.4"><path d="m5 12 5 5 9-10"/></svg></div>
+          <h3>Tak! Din forespørgsel er modtaget.</h3>
+          <p id="successText">Vi vender tilbage inden for 24 timer på hverdage og bekræfter dit møde.</p>
+        </div>
       </div>
     </div>
 
