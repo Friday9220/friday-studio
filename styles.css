@@ -288,7 +288,7 @@ h3{font-size:clamp(20px,1.8vw,24px);letter-spacing:-.015em}
 /* ---------- FAQ ---------- */
 .faq-list{border-top:1px solid var(--line)}
 .faq{border-bottom:1px solid var(--line)}
-.faq-q{display:grid;grid-template-columns:80px 1fr 40px;gap:16px;align-items:center;width:100%;text-align:left;padding:22px 0}
+.faq-q{display:grid;grid-template-columns:1fr 40px;gap:16px;align-items:center;width:100%;text-align:left;padding:22px 0}
 .faq-q .n{color:var(--muted);font-size:14px;transition:color .3s}
 .faq-q h3{font-size:clamp(17px,1.6vw,21px);font-weight:600;transition:color .3s}
 .faq-q .pm{width:32px;height:32px;position:relative;justify-self:end}
@@ -296,7 +296,7 @@ h3{font-size:clamp(20px,1.8vw,24px);letter-spacing:-.015em}
 .faq-q .pm::after{transform:translate(-50%,-50%) rotate(90deg)}
 .faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s var(--ease)}
 .faq-a > div{overflow:hidden}
-.faq-a p{padding:0 56px 24px 96px;color:var(--ink-2);max-width:900px}
+.faq-a p{padding:0 56px 24px 0;color:var(--ink-2);max-width:900px}
 .faq.open .faq-q .n,.faq.open .faq-q h3{color:var(--accent-strong)}
 .faq.open .pm::after{transform:translate(-50%,-50%) rotate(0)}
 .faq.open .faq-a{grid-template-rows:1fr}
@@ -402,8 +402,8 @@ footer{margin-top:clamp(40px,6vw,80px);padding-top:28px;border-top:1px solid var
   .hero-svcs{gap:8px 18px}
   .sparks{display:none}
   .svc-row{gap:12px}
-  .faq-q{grid-template-columns:40px 1fr 32px;gap:10px}
-  .faq-a p{padding:0 10px 22px 50px}
+  .faq-q{grid-template-columns:1fr 32px;gap:10px}
+  .faq-a p{padding:0 10px 22px 0}
 }
 @media (max-width:560px){
   :root{--radius:20px}
