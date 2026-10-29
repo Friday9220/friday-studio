@@ -31,7 +31,9 @@
   function supabaseApi() {
     const base = cfg.supabaseUrl.replace(/\/$/, '') + '/rest/v1/';
     const headers = {
-      apikey: cfg.supabaseAnonKey, Authorization: 'Bearer ' + cfg.supabaseAnonKey,
+      apikey: cfg.supabaseAnonKey,
+      // Nye Supabase-nøgler (sb_publishable_…) er ikke JWT og må ikke sendes som Bearer.
+      ...(cfg.supabaseAnonKey.startsWith('sb_') ? {} : { Authorization: 'Bearer ' + cfg.supabaseAnonKey }),
       'Content-Type': 'application/json', 'x-friday-key': key
     };
     async function req(path, opts = {}) {
@@ -409,8 +411,13 @@
     $('#demoBar').hidden = !demo;
     if (!demo) {
       let ok = false;
-      if (key) { try { ok = await api.check(); } catch (err) { console.error(err); } }
-      if (!ok) { $('#app').hidden = true; $('.top').hidden = true; $('#locked').hidden = false; return; }
+      let why = key ? 'Nøglen i linket passer ikke.' : 'Linket mangler nøglen.';
+      if (key) { try { ok = await api.check(); } catch (err) { console.error(err); why = 'Fejl fra databasen: ' + err.message; } }
+      if (!ok) {
+        $('#app').hidden = true; $('.top').hidden = true; $('#locked').hidden = false;
+        $('#lockWhy').textContent = why;
+        return;
+      }
     }
     if (me) setMe(me);
     try { await load(); } catch (err) { fail(err); return; }

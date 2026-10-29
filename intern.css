@@ -97,6 +97,7 @@ main{padding:24px var(--gutter) 60px}
 .locked{min-height:70vh;display:grid;place-content:center;justify-items:center;text-align:center;gap:14px;padding:40px var(--gutter)}
 .locked h1{font-size:clamp(24px,4vw,34px)}
 .locked p{color:var(--ink-2)}
+.locked .why{font-size:13px;color:var(--muted);max-width:520px;overflow-wrap:anywhere}
 
 /* SKUFFE + MODAL */
 .drawer,.modal{position:fixed;inset:0;z-index:50;background:rgba(15,31,26,.32);opacity:0;pointer-events:none;transition:opacity .2s}

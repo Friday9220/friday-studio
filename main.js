@@ -239,7 +239,9 @@
     const res = await fetch(cfg.supabaseUrl.replace(/\/$/, '') + '/rest/v1/customers', {
       method: 'POST',
       headers: {
-        apikey: cfg.supabaseAnonKey, Authorization: 'Bearer ' + cfg.supabaseAnonKey,
+        apikey: cfg.supabaseAnonKey,
+        // Nye Supabase-nøgler (sb_publishable_…) er ikke JWT og må ikke sendes som Bearer.
+        ...(cfg.supabaseAnonKey.startsWith('sb_') ? {} : { Authorization: 'Bearer ' + cfg.supabaseAnonKey }),
         'Content-Type': 'application/json', Prefer: 'return=minimal'
       },
       body: JSON.stringify(row)
