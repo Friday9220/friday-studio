@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=9">
+<link rel="stylesheet" href="styles.css?v=10">
 </head>
 <body class="load">
 
@@ -99,59 +99,48 @@
   <!-- SERVICES -->
   <section class="section dark" id="ydelser">
     <div class="sec-head">
-      <h2 class="split">Ydelser</h2>
+      <h2 class="split">Det kan vi hjælpe med</h2>
+      <p class="reveal">Fire områder, én fast kontakt. Klik på et område for at se alle ydelser og priser.</p>
     </div>
-    <div class="svc-list" id="svcList">
-
-      <div class="svc">
-        <button class="svc-row" aria-expanded="false">
-          <span class="svc-title">Hjemmesider</span>
-          <span class="svc-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12 12 4M5 4h7v7"/></svg></span>
-        </button>
-        <div class="svc-body"><div><div class="svc-inner">
-          <p>Hurtige, flotte hjemmesider, der er nemme at finde på Google og nemme for dig at opdatere. Bygget til mobilen først, fordi det er der, dine kunder er.</p>
-          <div class="svc-visual v-web"><img src="https://images.unsplash.com/photo-1586880244406-556ebe35f282?auto=format&fit=crop&w=700&q=75" alt="Person arbejder på en bærbar ved et hvidt bord" loading="lazy"></div>
-          <ul class="svc-checks"><li>Design efter dit brand</li><li>Mobilvenlig og hurtig</li><li>Google-optimeret (SEO)</li><li>Menukort, åbningstider og kort</li><li>Hosting og domæne sat op</li></ul>
-        </div></div></div>
-      </div>
-
-      <div class="svc">
-        <button class="svc-row" aria-expanded="false">
-          <span class="svc-title">Ordresystemer</span>
-          <span class="svc-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12 12 4M5 4h7v7"/></svg></span>
-        </button>
-        <div class="svc-body"><div><div class="svc-inner">
-          <p>Dit eget bestillingssystem til pizzeria, café eller restaurant. Kunderne bestiller direkte hos dig, og du slipper for høje gebyrer til mellemmænd.</p>
-          <div class="svc-visual v-order"><img src="https://images.unsplash.com/photo-1555596098-9b19f458ed19?auto=format&fit=crop&w=700&q=75" alt="Hånd der holder en tablet" loading="lazy"></div>
-          <ul class="svc-checks"><li>Online bestilling</li><li>Køkkenskærm i realtid</li><li>Afhentning og levering</li><li>Bordbestilling</li><li>Ingen gebyr pr. ordre</li></ul>
-        </div></div></div>
-      </div>
-
-      <div class="svc">
-        <button class="svc-row" aria-expanded="false">
-          <span class="svc-title">Skræddersyede systemer</span>
-          <span class="svc-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12 12 4M5 4h7v7"/></svg></span>
-        </button>
-        <div class="svc-body"><div><div class="svc-inner">
-          <p>Har du en idé eller et problem, der kræver et system? Vi bygger det meste: bookingsystemer, lagerstyring, interne værktøjer og integrationer.</p>
-          <div class="svc-visual v-sys"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=700&q=75" alt="Bærbar med kode på skærmen" loading="lazy"></div>
-          <ul class="svc-checks"><li>Booking og kalender</li><li>Lager og indkøb</li><li>Kundeklubber og loyalitet</li><li>Dashboards og rapporter</li><li>Integration med kasse</li></ul>
-        </div></div></div>
-      </div>
-
-      <div class="svc">
-        <button class="svc-row" aria-expanded="false">
-          <span class="svc-title">Grafisk design</span>
-          <span class="svc-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12 12 4M5 4h7v7"/></svg></span>
-        </button>
-        <div class="svc-body"><div><div class="svc-inner">
-          <p>Et stærkt logo og en sammenhængende visuel identitet, der går igen på skiltet, menukortet, flyeren og hjemmesiden. Leveret trykklart.</p>
-          <div class="svc-visual v-gfx"><img src="https://images.unsplash.com/photo-1557499305-bd68d0ad468d?auto=format&fit=crop&w=700&q=75" alt="Menukort i papir" loading="lazy"></div>
-          <ul class="svc-checks"><li>Logo og visuel identitet</li><li>Menukort</li><li>Flyers og plakater</li><li>Skilte og visitkort</li><li>Sociale medier</li></ul>
-        </div></div></div>
-      </div>
-
+    <div class="svc-grid stagger">
+      <a href="ydelser.html#hjemmesider" class="svc-card">
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1586880244406-556ebe35f282?auto=format&fit=crop&w=800&q=75" alt="Person arbejder på en bærbar" loading="lazy"><span class="svc-from">fra 995 kr.</span></div>
+        <div class="svc-text">
+          <h3>Hjemmesider</h3>
+          <p>Flotte, hurtige hjemmesider, der er nemme at finde på Google.</p>
+          <ul><li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span>Onepage og større hjemmesider</li><li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span>Online menukort med QR-kode</li><li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span>Google-profil og hosting</li></ul>
+          <span class="svc-more">Se mere <span class="arr">→</span></span>
+        </div>
+      </a>
+      <a href="ydelser.html#systemer" class="svc-card">
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1555596098-9b19f458ed19?auto=format&fit=crop&w=800&q=75" alt="Hånd der holder en tablet" loading="lazy"><span class="svc-from">fra 3.995 kr.</span></div>
+        <div class="svc-text">
+          <h3>Ordresystemer</h3>
+          <p>Kunderne bestiller direkte hos dig, uden gebyrer til mellemmænd.</p>
+          <ul><li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span>Online bestilling og levering</li><li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span>Køkkenskærm i realtid</li><li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span>Bordbestilling</li></ul>
+          <span class="svc-more">Se mere <span class="arr">→</span></span>
+        </div>
+      </a>
+      <a href="ydelser.html#systemer" class="svc-card">
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=75" alt="Bærbar med kode på skærmen" loading="lazy"><span class="svc-from">efter aftale</span></div>
+        <div class="svc-text">
+          <h3>Skræddersyede systemer</h3>
+          <p>Har du en idé eller et problem? Vi bygger systemet til det.</p>
+          <ul><li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span>Booking og kalender</li><li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span>Kundeklub og loyalitet</li><li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span>Lager og interne værktøjer</li></ul>
+          <span class="svc-more">Se mere <span class="arr">→</span></span>
+        </div>
+      </a>
+      <a href="ydelser.html#grafisk" class="svc-card">
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1557499305-bd68d0ad468d?auto=format&fit=crop&w=800&q=75" alt="Menukort i papir" loading="lazy"><span class="svc-from">fra 1.299 kr.</span></div>
+        <div class="svc-text">
+          <h3>Grafisk design</h3>
+          <p>Logo og tryksager, der får dig til at se professionel ud.</p>
+          <ul><li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span>Logo og visuel identitet</li><li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span>Menukort, flyers og plakater</li><li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span>Grafik til sociale medier</li></ul>
+          <span class="svc-more">Se mere <span class="arr">→</span></span>
+        </div>
+      </a>
     </div>
+    <div class="svc-all reveal"><a href="ydelser.html" class="btn btn-accent">Se alle ydelser og priser <span class="arr">→</span></a></div>
   </section>
 
   <!-- DEMO -->
@@ -394,20 +383,7 @@
   }), { threshold: 0.5 });
   $$('[data-count]').forEach(el => cio.observe(el));
 
-  // services accordion (hover on desktop, tap everywhere)
-  const svcs = $$('.svc');
-  const openSvc = idx => svcs.forEach((s, i) => {
-    const o = i === idx;
-    s.classList.toggle('open', o);
-    $('.svc-row', s).setAttribute('aria-expanded', o);
-  });
   const hoverable = matchMedia('(hover: hover) and (min-width: 1101px)').matches;
-  svcs.forEach((s, i) => {
-    $('.svc-row', s).addEventListener('click', () => openSvc(s.classList.contains('open') ? -1 : i));
-    if (hoverable) s.addEventListener('mouseenter', () => openSvc(i));
-  });
-  openSvc(0);
-  $$('[data-open]').forEach(a => a.addEventListener('click', () => openSvc(+a.dataset.open)));
 
   // pricing hover highlight
   const plans = $$('.plan');
