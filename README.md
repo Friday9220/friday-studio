@@ -2,7 +2,7 @@
 
 Hjemmeside for FRIDAY studio: hjemmesider, ordresystemer, skræddersyede systemer og grafisk design til små virksomheder.
 
-Forsiden er `index.html`, ydelser og priser ligger på `ydelser.html` (`priser.html` sender videre dertil), og fælles styling ligger i `styles.css`. Siden og kan hostes direkte med GitHub Pages.
+Sider: `index.html` (forside), `ydelser.html` (ydelser og priser), `ordresystem.html` (demo af ordresystem), `proces.html`, `om-os.html` og `spoergsmaal.html`. `priser.html` sender videre til `ydelser.html`. Fælles styling ligger i `styles.css` og fælles JavaScript i `main.js`. Siden og kan hostes direkte med GitHub Pages.
 
 Ting der skal opdateres senere:
 - Priserne i sektionen "Priser" er pladsholdere.

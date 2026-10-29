@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=12">
+<link rel="stylesheet" href="styles.css?v=13">
 </head>
 <body class="load">
 
@@ -25,11 +25,11 @@
       </a>
       <nav class="nav-links" aria-label="Hovedmenu">
         <a href="index.html#kunder">Kunder</a>
-        <a href="index.html#demo">Prøv et ordresystem</a>
-        <a href="index.html#proces">Proces</a>
-        <a href="index.html#om-os">Om os</a>
-        <a href="ydelser.html" class="active">Ydelser og priser</a>
-        <a href="index.html#faq">Spørgsmål</a>
+        <a href="ordresystem.html">Prøv et ordresystem</a>
+        <a href="proces.html">Proces</a>
+        <a href="om-os.html">Om os</a>
+        <a href="ydelser.html">Ydelser og priser</a>
+        <a href="spoergsmaal.html">Spørgsmål</a>
       </nav>
       <div style="display:flex;gap:8px;align-items:center">
         <a href="index.html#kontakt" class="btn btn-dark">Book et møde <span class="arr">→</span></a>
@@ -37,16 +37,16 @@
       </div>
     </div>
     <div class="mobile-menu" id="mobileMenu">
-      <a href="index.html#demo">Prøv et ordresystem</a>
-      <a href="index.html#proces">Proces</a>
-      <a href="index.html#om-os">Om os</a>
+      <a href="ordresystem.html">Prøv et ordresystem</a>
+      <a href="proces.html">Proces</a>
+      <a href="om-os.html">Om os</a>
       <a href="ydelser.html">Ydelser og priser</a>
-      <a href="index.html#faq">Spørgsmål</a>
+      <a href="spoergsmaal.html">Spørgsmål</a>
       <a href="index.html#kontakt" class="btn btn-accent">Book et gratis møde</a>
     </div>
   </header>
 
-  <section class="section white price-hero">
+  <section class="section white page-hero">
     <h1 class="split">Ydelser og priser</h1>
     <p class="reveal">Her kan du se alt, hvad vi laver, og hvad det koster. Alle priser er faste startpriser ekskl. moms. Efter et gratis møde får du et samlet oplæg med fast pris.</p>
     <div class="jump stagger">
@@ -130,7 +130,7 @@
       <div class="foot-top">
         <a href="index.html" class="logo light"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18" fill="#A8E6C1"/><g transform="translate(6 6) scale(.81)"><g fill="#0F1F1A"><path d="M13 54V24a14 14 0 0 1 14-14h17v13H27v7h12a6 6 0 0 1 0 12H27v12Z"/><path d="M45 23c0-8.5 5.5-13.5 13-13.5 0 8.5-5.5 13.5-13 13.5Z"/></g><path d="M47.5 20.5 55 13" stroke="#A8E6C1" stroke-width="1.6" stroke-linecap="round"/></g></svg><span>FRIDAY <small>studio</small></span></a>
         <nav class="foot-links" aria-label="Footer">
-          <a href="index.html#ydelser">Ydelser</a><a href="index.html#demo">Demo</a><a href="index.html#proces">Proces</a><a href="index.html#om-os">Om os</a><a href="ydelser.html">Ydelser og priser</a><a href="index.html#faq">Spørgsmål</a><a href="index.html#kontakt">Kontakt</a>
+          <a href="ydelser.html">Ydelser og priser</a><a href="ordresystem.html">Ordresystem</a><a href="proces.html">Proces</a><a href="om-os.html">Om os</a><a href="spoergsmaal.html">Spørgsmål</a><a href="index.html#kontakt">Kontakt</a>
         </nav>
       </div>
       <div class="foot-bottom">
@@ -143,42 +143,6 @@
 
 </div>
 
-<script>
-(() => {
-  const $ = (s, el = document) => el.querySelector(s);
-  const $$ = (s, el = document) => [...el.querySelectorAll(s)];
-  requestAnimationFrame(() => setTimeout(() => document.body.classList.add('loaded'), 80));
-  $('#yr').textContent = new Date().getFullYear();
-  const nav = $('#nav');
-  const onScroll = () => nav.classList.toggle('scrolled', scrollY > 20);
-  addEventListener('scroll', onScroll, { passive: true }); onScroll();
-  $('#menuBtn').addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-    $('#menuBtn').setAttribute('aria-expanded', open);
-  });
-  $$('.split').forEach(h => {
-    const walk = node => [...node.childNodes].forEach(n => {
-      if (n.nodeType === 3) {
-        const frag = document.createDocumentFragment();
-        n.textContent.split(/(\s+)/).forEach(part => {
-          if (!part) return;
-          if (/^\s+$/.test(part)) { frag.append(' '); return; }
-          const w = document.createElement('span'); w.className = 'wd';
-          const i = document.createElement('span'); i.textContent = part;
-          w.append(i); frag.append(w);
-        });
-        n.replaceWith(frag);
-      } else if (n.nodeType === 1) walk(n);
-    });
-    walk(h);
-    $$('.wd > span', h).forEach((s, i) => s.style.transitionDelay = (i * 0.06) + 's');
-  });
-  $$('.stagger').forEach(g => [...g.children].forEach((c, i) => c.style.transitionDelay = (i * 0.1) + 's'));
-  const io = new IntersectionObserver(es => es.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-  }), { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-  $$('.reveal, .split, .stagger').forEach(el => io.observe(el));
-})();
-</script>
+<script src="main.js?v=1"></script>
 </body>
 </html>
