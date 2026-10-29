@@ -317,7 +317,8 @@ h3{font-size:clamp(20px,1.8vw,24px);letter-spacing:-.015em}
 
 /* ---------- CONTACT ---------- */
 .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(32px,6vw,96px);align-items:start}
-.contact-left h2{font-size:clamp(40px,5vw,72px)}
+.contact-left h2,.contact-left h1{font-size:clamp(40px,5vw,72px)}
+.book-page{padding-top:calc(76px + clamp(56px,8vw,110px));min-height:100svh}
 .contact-left p{color:rgba(255,255,255,.65);margin-top:20px;max-width:420px;font-size:clamp(16px,1.3vw,18px)}
 .perks{list-style:none;margin-top:36px;display:flex;flex-direction:column;gap:14px}
 .perks li{display:flex;gap:12px;align-items:center;font-size:16px;color:rgba(255,255,255,.88)}

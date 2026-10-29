@@ -227,6 +227,8 @@
     $$('[data-topic]').forEach(a => a.addEventListener('click', () => {
       topics.forEach(c => c.classList.toggle('on', c.textContent === a.dataset.topic));
     }));
+    const emne = new URLSearchParams(location.search).get('emne');
+    if (emne) topics.forEach(c => c.classList.toggle('on', c.textContent === emne));
     const d = $('#fDate'); const tm = new Date(); tm.setDate(tm.getDate() + 1);
     d.min = tm.toISOString().slice(0, 10);
 

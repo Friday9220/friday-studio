@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=13">
+<link rel="stylesheet" href="styles.css?v=14">
 </head>
 <body class="load">
 
@@ -31,7 +31,7 @@
         <a href="spoergsmaal.html">Spørgsmål</a>
       </nav>
       <div style="display:flex;gap:8px;align-items:center">
-        <a href="#kontakt" class="btn btn-dark">Book et møde <span class="arr">→</span></a>
+        <a href="book-et-moede.html" class="btn btn-dark">Book et møde <span class="arr">→</span></a>
         <button class="menu-btn" id="menuBtn" aria-label="Åbn menu" aria-expanded="false"><span></span></button>
       </div>
     </div>
@@ -41,7 +41,7 @@
       <a href="om-os.html">Om os</a>
       <a href="ydelser.html">Ydelser og priser</a>
       <a href="spoergsmaal.html">Spørgsmål</a>
-      <a href="#kontakt" class="btn btn-accent">Book et gratis møde</a>
+      <a href="book-et-moede.html" class="btn btn-accent">Book et gratis møde</a>
     </div>
   </header>
 
@@ -52,7 +52,7 @@
       <h1 class="split">Vi bygger det digitale, <span class="soft">så du kan passe din forretning.</span></h1>
       <p class="hero-sub fade">Hjemmesider, ordresystemer og grafisk design til restauranter, caféer og små butikker.</p>
       <div class="hero-actions fade">
-        <a href="#kontakt" class="btn btn-accent">Book et gratis møde <span class="arr">→</span></a>
+        <a href="book-et-moede.html" class="btn btn-accent">Book et gratis møde <span class="arr">→</span></a>
         <a href="ydelser.html" class="btn btn-glass">Se ydelser og priser</a>
       </div>
     </div>
@@ -239,63 +239,17 @@
     <div class="sec-more reveal"><a href="spoergsmaal.html" class="btn btn-ghost">Se alle spørgsmål <span class="arr">→</span></a></div>
   </section>
 
-  <!-- CONTACT + FOOTER -->
-  <section class="section dark" id="kontakt">
-    <div class="contact-grid" id="contactGrid">
-      <div class="contact-left">
-        <h2 class="split">Book et gratis møde</h2>
-        <p class="reveal">Fortæl kort om din forretning, og vælg et tidspunkt, der passer dig. Vi vender tilbage inden for 24 timer på hverdage.</p>
-        <ul class="perks reveal">
-          <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span>Gratis og uforpligtende</li>
-          <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span>Ca. 30 minutter, online eller hos dig</li>
-          <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span>Du får et konkret oplæg med fast pris</li>
-        </ul>
-      </div>
-
-      <div class="book-card reveal">
-        <form class="book" id="bookForm" novalidate>
-          <div class="row2">
-            <div class="field"><label for="fName">Navn *</label><input id="fName" name="navn" required autocomplete="name" placeholder="Dit fulde navn"></div>
-            <div class="field"><label for="fCompany">Virksomhed</label><input id="fCompany" name="virksomhed" autocomplete="organization" placeholder="Fx Pizzeria Bella"></div>
-          </div>
-          <div class="row2">
-            <div class="field"><label for="fEmail">E-mail *</label><input id="fEmail" name="email" type="email" required autocomplete="email" placeholder="navn@firma.dk"></div>
-            <div class="field"><label for="fPhone">Telefon *</label><input id="fPhone" name="telefon" type="tel" required autocomplete="tel" placeholder="12 34 56 78"></div>
-          </div>
-          <div class="field">
-            <span class="flabel">Hvad drejer det sig om?</span>
-            <div class="chips" id="topics">
-              <button type="button" class="chip">Hjemmeside</button>
-              <button type="button" class="chip">Ordresystem</button>
-              <button type="button" class="chip">Skræddersyet system</button>
-              <button type="button" class="chip">Grafisk design</button>
-              <button type="button" class="chip">Andet</button>
-            </div>
-          </div>
-          <div class="row2">
-            <div class="field"><label for="fDate">Foretrukken dato</label><input id="fDate" name="dato" type="date"></div>
-            <div class="field"><label for="fTime">Tidspunkt</label>
-              <select id="fTime" name="tid"><option>Formiddag (9–12)</option><option>Eftermiddag (12–16)</option><option>Sen eftermiddag (16–18)</option></select>
-            </div>
-          </div>
-          <div class="field"><label for="fMsg">Besked</label><textarea id="fMsg" name="besked" rows="3" placeholder="Fortæl kort om dit projekt"></textarea></div>
-          <button class="btn btn-accent" type="submit">Book gratis møde <span class="arr">→</span></button>
-          <div class="form-msg" id="formMsg" role="alert"></div>
-        </form>
-
-        <div class="success" role="status">
-          <div class="ck"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0F1F1A" stroke-width="2.4"><path d="m5 12 5 5 9-10"/></svg></div>
-          <h3>Tak! Din forespørgsel er modtaget.</h3>
-          <p id="successText">Vi vender tilbage inden for 24 timer på hverdage og bekræfter dit møde.</p>
-        </div>
-      </div>
+  <!-- CTA + FOOTER -->
+  <section class="section dark">
+    <div class="sec-head">
+      <h2 class="split">Klar til at komme i gang? <span style="color:rgba(255,255,255,.4)">Book et gratis møde.</span></h2>
+      <a href="book-et-moede.html" class="btn btn-accent reveal">Book et gratis møde <span class="arr">→</span></a>
     </div>
-
     <footer>
       <div class="foot-top">
-        <a href="#top" class="logo light"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18" fill="#A8E6C1"/><g transform="translate(6 6) scale(.81)"><g fill="#0F1F1A"><path d="M13 54V24a14 14 0 0 1 14-14h17v13H27v7h12a6 6 0 0 1 0 12H27v12Z"/><path d="M45 23c0-8.5 5.5-13.5 13-13.5 0 8.5-5.5 13.5-13 13.5Z"/></g><path d="M47.5 20.5 55 13" stroke="#A8E6C1" stroke-width="1.6" stroke-linecap="round"/></g></svg><span>FRIDAY <small>studio</small></span></a>
+        <a href="index.html" class="logo light"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18" fill="#A8E6C1"/><g transform="translate(6 6) scale(.81)"><g fill="#0F1F1A"><path d="M13 54V24a14 14 0 0 1 14-14h17v13H27v7h12a6 6 0 0 1 0 12H27v12Z"/><path d="M45 23c0-8.5 5.5-13.5 13-13.5 0 8.5-5.5 13.5-13 13.5Z"/></g><path d="M47.5 20.5 55 13" stroke="#A8E6C1" stroke-width="1.6" stroke-linecap="round"/></g></svg><span>FRIDAY <small>studio</small></span></a>
         <nav class="foot-links" aria-label="Footer">
-          <a href="ydelser.html">Ydelser og priser</a><a href="ordresystem.html">Ordresystem</a><a href="proces.html">Proces</a><a href="om-os.html">Om os</a><a href="spoergsmaal.html">Spørgsmål</a><a href="#kontakt">Kontakt</a>
+          <a href="ydelser.html">Ydelser og priser</a><a href="ordresystem.html">Ordresystem</a><a href="proces.html">Proces</a><a href="om-os.html">Om os</a><a href="spoergsmaal.html">Spørgsmål</a><a href="book-et-moede.html">Book et møde</a>
         </nav>
       </div>
       <div class="foot-bottom">
@@ -308,8 +262,6 @@
 
 </div>
 
-<div class="toast" id="toast"></div>
-
-<script src="main.js?v=1"></script>
+<script src="main.js?v=2"></script>
 </body>
 </html>
