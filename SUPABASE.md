@@ -16,9 +16,10 @@ Det tager cirka 10 minutter og er gratis.
 1. Åbn **SQL Editor** i menuen til venstre, og tryk **New query**.
 2. Åbn filen [`supabase/schema.sql`](supabase/schema.sql) her i projektet, kopier alt indholdet, og indsæt det.
 3. Tryk **Run**.
-4. Nederst vises **Jeres hemmelige nøgle**: en lang række bogstaver og tal. Kopier den, for du skal bruge den i trin 4.
+4. Tryk **New query** igen, indsæt indholdet af [`supabase/adgang.sql`](supabase/adgang.sql), og tryk **Run**.
+5. Kør `select key from access_keys;`. Resultatet er **Jeres hemmelige nøgle**: en lang række bogstaver og tal. Kopier den, for du skal bruge den i trin 4.
 
-Du kan altid finde nøglen igen ved at køre `select key from access_keys;` i SQL Editor.
+Du kan altid finde nøglen igen på samme måde.
 
 ## 3. Forbind hjemmesiden til databasen
 

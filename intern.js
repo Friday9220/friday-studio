@@ -29,29 +29,27 @@
   const key = hashKey || store.get('friday-key', '');
 
   function supabaseApi() {
-    const base = cfg.supabaseUrl.replace(/\/$/, '') + '/rest/v1/';
-    const headers = {
-      apikey: cfg.supabaseAnonKey,
-      // Nye Supabase-nøgler (sb_publishable_…) er ikke JWT og må ikke sendes som Bearer.
-      ...(cfg.supabaseAnonKey.startsWith('sb_') ? {} : { Authorization: 'Bearer ' + cfg.supabaseAnonKey }),
-      'Content-Type': 'application/json', 'x-friday-key': key
-    };
-    async function req(path, opts = {}) {
-      const res = await fetch(base + path, { ...opts, headers: { ...headers, ...(opts.headers || {}) } });
-      if (!res.ok) throw new Error((await res.text()) || res.statusText);
-      return res.status === 204 ? null : res.json();
+    const base = cfg.supabaseUrl.replace(/\/$/, '') + '/rest/v1/rpc/';
+    const headers = { apikey: cfg.supabaseAnonKey, 'Content-Type': 'application/json' };
+    // Nye Supabase-nøgler (sb_publishable_…) er ikke JWT og må ikke sendes som Bearer.
+    if (!cfg.supabaseAnonKey.startsWith('sb_')) headers.Authorization = 'Bearer ' + cfg.supabaseAnonKey;
+    // Alt går gennem funktionerne i supabase/adgang.sql, som tjekker den hemmelige nøgle.
+    async function rpc(fn, args = {}) {
+      const res = await fetch(base + fn, { method: 'POST', headers, body: JSON.stringify({ k: key, ...args }) });
+      const text = await res.text();
+      if (!res.ok) throw new Error(text || res.statusText);
+      return text ? JSON.parse(text) : null;
     }
-    const one = { Prefer: 'return=representation' };
     return {
-      check: () => req('rpc/is_team', { method: 'POST', body: '{}' }),
-      customers: () => req('customers?select=*&order=created_at.desc'),
-      notes: id => req(`notes?select=*&customer_id=eq.${id}&order=created_at.desc`),
-      noteCounts: () => req('notes?select=customer_id'),
-      create: c => req('customers', { method: 'POST', headers: one, body: JSON.stringify(c) }).then(r => r[0]),
-      update: (id, p) => req(`customers?id=eq.${id}`, { method: 'PATCH', headers: one, body: JSON.stringify(p) }).then(r => r[0]),
-      remove: id => req(`customers?id=eq.${id}`, { method: 'DELETE' }),
-      addNote: n => req('notes', { method: 'POST', headers: one, body: JSON.stringify(n) }).then(r => r[0]),
-      removeNote: id => req(`notes?id=eq.${id}`, { method: 'DELETE' })
+      check: () => rpc('crm_check'),
+      customers: () => rpc('crm_customers'),
+      notes: id => rpc('crm_notes', { cid: id }),
+      noteCounts: () => rpc('crm_note_counts'),
+      create: c => rpc('crm_create', { c }),
+      update: (id, p) => rpc('crm_update', { cid: id, p }),
+      remove: id => rpc('crm_delete', { cid: id }),
+      addNote: n => rpc('crm_add_note', { n }),
+      removeNote: id => rpc('crm_delete_note', { nid: id })
     };
   }
 

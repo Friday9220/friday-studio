@@ -48,15 +48,7 @@ begin new.updated_at = now(); return new; end $$;
 drop trigger if exists customers_touch on customers;
 create trigger customers_touch before update on customers for each row execute function touch_updated_at();
 
--- Sand, når forespørgslen kommer fra den interne side med den rigtige nøgle.
-create or replace function is_team() returns boolean language sql stable security definer set search_path = public as $$
-  select exists (
-    select 1 from access_keys
-    where key = coalesce(current_setting('request.headers', true)::json ->> 'x-friday-key', '')
-  );
-$$;
-
--- Sikkerhed: hjemmesiden må kun oprette nye bookinger. Alt andet kræver nøglen.
+-- Sikkerhed: hjemmesiden må kun oprette nye bookinger. Alt andet går gennem funktionerne i adgang.sql, som kræver nøglen.
 alter table customers enable row level security;
 alter table notes enable row level security;
 alter table access_keys enable row level security;
@@ -65,13 +57,7 @@ drop policy if exists "website creates bookings" on customers;
 create policy "website creates bookings" on customers for insert to anon
   with check (source = 'website' and status = 'ny' and owner is null and meeting_at is null and budget is null and deadline is null);
 
-drop policy if exists "team manages customers" on customers;
-create policy "team manages customers" on customers for all to anon
-  using (is_team()) with check (is_team());
-
-drop policy if exists "team manages notes" on notes;
-create policy "team manages notes" on notes for all to anon
-  using (is_team()) with check (is_team());
+-- Kør derefter også supabase/adgang.sql.
 
 -- Jeres nøgle:
 select key as "Jeres hemmelige nøgle" from access_keys;
