@@ -4,5 +4,5 @@ window.FRIDAY_CONFIG = {
   supabaseUrl: 'https://ebbvozakceayxmrgigiv.supabase.co',
   supabaseAnonKey: 'sb_publishable_pDENvzPeWpDG1jyFyCRqKQ_r7sMbJZV',
   // Mail ved ny booking (via FormSubmit). Skriv jeres mail eller den kode, FormSubmit sender jer.
-  notifyEmail: ''
+  notifyEmail: 'jomaa981@live.dk'
 };
