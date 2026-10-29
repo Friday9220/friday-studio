@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=6">
+<link rel="stylesheet" href="styles.css?v=7">
 </head>
 <body class="load">
 
@@ -63,7 +63,6 @@
         <nav class="hero-svcs" aria-label="Ydelser">
           <a href="#ydelser" data-open="0">Hjemmesider</a><a href="#ydelser" data-open="1">Ordresystemer</a><a href="#ydelser" data-open="2">Skræddersyede systemer</a><a href="#ydelser" data-open="3">Grafisk design</a>
         </nav>
-        <div class="clip-nav" id="clipNav"></div>
       </div>
     </div>
   </section>
@@ -444,7 +443,7 @@
   // Free clips from Mixkit (Mixkit Stock Video Free License)
   const CLIPS = [4385, 3574, 219, 41222];
   const DUR = 7000;
-  const media = $('#heroMedia'), navEl = $('#clipNav');
+  const media = $('#heroMedia');
   const layers = CLIPS.map(id => {
     const d = document.createElement('div');
     d.className = 'clip';
@@ -452,14 +451,6 @@
     media.append(d);
     return d;
   });
-  const bars = CLIPS.map((_, i) => {
-    const b = document.createElement('button');
-    b.setAttribute('aria-label', 'Vis klip ' + (i + 1));
-    b.innerHTML = '<i></i>'; navEl.append(b);
-    b.addEventListener('click', () => show(i));
-    return b;
-  });
-  navEl.style.setProperty('--dur', DUR + 'ms');
   const addVideo = (i) => {
     const l = layers[i];
     if (l.querySelector('video') || reduce) return;
@@ -480,9 +471,6 @@
       const v = l.querySelector('video');
       if (v) { if (j === i) { v.currentTime = 0; v.play().catch(() => {}); } else setTimeout(() => v.pause(), 1500); }
     });
-    bars.forEach((b, j) => { b.classList.remove('on'); b.classList.toggle('done', j < i); });
-    void navEl.offsetWidth;
-    bars[i].classList.add('on');
     if (!reduce) timer = setTimeout(() => show((cur + 1) % CLIPS.length), DUR);
   };
   show(0);

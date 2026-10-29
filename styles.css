@@ -114,12 +114,6 @@ h3{font-size:clamp(20px,1.8vw,24px);letter-spacing:-.015em}
 .hero-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;padding-top:28px;border-top:1px solid rgba(255,255,255,.18)}
 .hero-svcs{display:flex;gap:28px;flex-wrap:wrap;font-size:14.5px;color:rgba(255,255,255,.78)}
 .hero-svcs a{transition:color .25s}.hero-svcs a:hover{color:var(--accent)}
-.clip-nav{display:flex;gap:6px}
-.clip-nav button{width:36px;height:3px;border-radius:2px;background:rgba(255,255,255,.28);position:relative;overflow:hidden;padding:0}
-.clip-nav button i{position:absolute;inset:0;background:#fff;transform:scaleX(0);transform-origin:left}
-.clip-nav button.on i{animation:fill var(--dur,7s) linear forwards}
-.clip-nav button.done i{transform:scaleX(1)}
-@keyframes fill{to{transform:scaleX(1)}}
 
 /* ---------- MARQUEE ---------- */
 .marquee{overflow:hidden;padding:24px 0;background:var(--white);border-bottom:1px solid var(--line)}
