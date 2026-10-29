@@ -375,7 +375,7 @@ footer{margin-top:clamp(40px,6vw,80px);padding-top:28px;border-top:1px solid var
 /* ---------- REVEAL ANIMATIONS ---------- */
 .reveal{opacity:0;transform:translateY(30px);filter:blur(10px);transition:opacity 1s var(--ease),transform 1s var(--ease),filter 1s var(--ease)}
 .reveal.in{opacity:1;transform:none;filter:none}
-.split .wd{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+.split .wd{display:inline-block;overflow:hidden;vertical-align:top;padding:.12em 0 .24em;margin:-.12em 0 -.24em}
 .split .wd > span{display:inline-block;transform:translateY(105%);transition:transform 1s var(--ease)}
 .split.in .wd > span{transform:none}
 .stagger > *{opacity:0;transform:translateY(30px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
