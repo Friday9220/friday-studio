@@ -99,46 +99,31 @@ h3{font-size:clamp(20px,1.8vw,24px);letter-spacing:-.015em}
 .mobile-menu{display:none}
 
 /* ---------- HERO ---------- */
-.hero{min-height:min(860px,calc(100svh - 96px));display:flex;flex-direction:column;justify-content:space-between;padding:var(--pad);background:#EAEFE8;isolation:isolate}
-.blobs{position:absolute;inset:0;z-index:-1;overflow:hidden;filter:blur(60px) saturate(1.15)}
-.blob{position:absolute;border-radius:50%;opacity:.85;will-change:transform}
-.b1{width:56vw;height:56vw;max-width:780px;max-height:780px;background:radial-gradient(circle at 30% 30%,#D3F5E1,#8EDCB0 55%,transparent 70%);right:-10%;top:-25%;animation:drift1 18s ease-in-out infinite alternate}
-.b2{width:48vw;height:48vw;max-width:640px;max-height:640px;background:radial-gradient(circle at 50% 50%,#FBE6D2,#F3C9A0 50%,transparent 70%);left:-12%;bottom:-30%;animation:drift2 22s ease-in-out infinite alternate}
-.b3{width:36vw;height:36vw;max-width:520px;max-height:520px;background:radial-gradient(circle,#E6F8CF,#BFE79E 50%,transparent 70%);left:35%;top:10%;animation:drift3 16s ease-in-out infinite alternate}
-.b4{width:30vw;height:30vw;max-width:420px;max-height:420px;background:radial-gradient(circle,#fff,transparent 65%);left:10%;top:0;animation:drift2 20s ease-in-out infinite alternate-reverse}
-@keyframes drift1{to{transform:translate(-14%,18%) scale(1.15) rotate(25deg)}}
-@keyframes drift2{to{transform:translate(18%,-14%) scale(1.1)}}
-@keyframes drift3{to{transform:translate(-20%,22%) scale(.85)}}
-.grain{position:absolute;inset:0;z-index:-1;opacity:.35;mix-blend-mode:soft-light;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
-.hero-top{display:flex;justify-content:flex-end;align-items:flex-start;gap:24px}
-.status{display:inline-flex;align-items:center;gap:10px;padding:8px 14px 8px 12px;border-radius:999px;background:rgba(255,255,255,.6);backdrop-filter:blur(10px);font-size:13.5px;font-weight:500}
-.status i{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 rgba(34,197,94,.6);animation:pulse 2s infinite}
-@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
-.hero-top p{max-width:320px;text-align:right;font-size:15px;color:var(--ink-2)}
-.hero-top p b{color:var(--ink);font-weight:600}
-.hero-bottom{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-top:40px}
-.hero-kicker{font-size:clamp(15px,1.3vw,18px);color:var(--ink-2);max-width:460px;margin-bottom:14px}
-.hero-kicker b{color:var(--accent-strong);font-weight:600}
-.wordmark{font-family:var(--font-head);font-weight:700;font-size:clamp(64px,13.2vw,196px);line-height:.86;letter-spacing:-.06em}
-.wordmark .ln{display:block;overflow:hidden;padding-bottom:.06em}
-.wordmark .ln > span{display:inline-block}
-.wordmark em{font-style:normal;color:transparent;-webkit-text-stroke:1.5px var(--ink)}
-.hero-cta{width:300px;flex-shrink:0}
-.hero-cta .btn{width:100%;margin-bottom:8px}
-.svc-mini{background:#fff;border-radius:16px;padding:6px;box-shadow:0 20px 50px -20px rgba(15,31,26,.25)}
-.svc-mini a{display:flex;justify-content:space-between;align-items:center;padding:11px 12px;border-radius:10px;font-size:14px;transition:background .25s,padding .3s var(--ease)}
-.svc-mini a:hover{background:var(--bg);padding-left:16px}
-.svc-mini a span:last-child{transition:transform .3s var(--ease)}
-.svc-mini a:hover span:last-child{transform:translateX(3px);color:var(--accent-strong)}
-
-.float{position:absolute;z-index:2;background:rgba(255,255,255,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.9);border-radius:16px;padding:12px 14px;box-shadow:0 18px 40px -18px rgba(15,31,26,.25);font-size:13px;display:flex;gap:10px;align-items:center;animation:bob 6s ease-in-out infinite}
-.float .ic{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;flex-shrink:0;font-size:16px}
-.float b{display:block;font-weight:600;font-size:13px}
-.float small{color:var(--muted);font-size:12px}
-.f1{right:32%;top:22%}
-.f2{right:8%;top:40%;animation-delay:-2s}
-.f3{left:52%;bottom:14%;animation-delay:-4s}
-@keyframes bob{50%{transform:translateY(-12px)}}
+.hero{min-height:min(820px,calc(100svh - 96px));padding:0;background:#0F1F1A;color:#fff;display:flex;isolation:isolate}
+.hero-media{position:absolute;inset:0;z-index:-2;overflow:hidden}
+.clip{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.4s ease;transform:scale(1.04)}
+.clip.on{opacity:1;animation:kb 9s linear forwards}
+.clip video{width:100%;height:100%;object-fit:cover;display:block}
+@keyframes kb{from{transform:scale(1.04)}to{transform:scale(1.12)}}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,22,18,.35) 0%,rgba(10,22,18,.15) 35%,rgba(10,22,18,.78) 100%),linear-gradient(90deg,rgba(10,22,18,.45),transparent 60%)}
+.hero-inner{display:flex;flex-direction:column;justify-content:flex-end;width:100%;padding:var(--pad);gap:28px}
+.hero-kicker{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;padding:7px 14px 7px 8px;border-radius:999px;background:rgba(255,255,255,.12);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.18);font-size:13.5px;font-weight:500}
+.hero-kicker svg{width:22px;height:22px}
+.hero h1{font-size:clamp(42px,6.2vw,92px);font-weight:600;letter-spacing:-.04em;line-height:1;max-width:17ch}
+.hero h1 .soft{color:var(--accent)}
+.hero-sub{font-size:clamp(16px,1.4vw,19px);color:rgba(255,255,255,.82);max-width:520px}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn-glass{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.25);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.btn-glass:hover{background:rgba(255,255,255,.22)}
+.hero-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;padding-top:28px;border-top:1px solid rgba(255,255,255,.18)}
+.hero-svcs{display:flex;gap:28px;flex-wrap:wrap;font-size:14.5px;color:rgba(255,255,255,.78)}
+.hero-svcs a{transition:color .25s}.hero-svcs a:hover{color:var(--accent)}
+.clip-nav{display:flex;gap:6px}
+.clip-nav button{width:36px;height:3px;border-radius:2px;background:rgba(255,255,255,.28);position:relative;overflow:hidden;padding:0}
+.clip-nav button i{position:absolute;inset:0;background:#fff;transform:scaleX(0);transform-origin:left}
+.clip-nav button.on i{animation:fill var(--dur,7s) linear forwards}
+.clip-nav button.done i{transform:scaleX(1)}
+@keyframes fill{to{transform:scaleX(1)}}
 
 /* ---------- MARQUEE ---------- */
 .marquee{overflow:hidden;padding:22px 0;border-radius:var(--radius);background:var(--white);margin-top:12px}
@@ -377,9 +362,6 @@ footer{margin-top:clamp(40px,6vw,80px);padding-top:28px;border-top:1px solid var
 .split.in .wd > span{transform:none}
 .stagger > *{opacity:0;transform:translateY(30px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
 .stagger.in > *{opacity:1;transform:none}
-.load .ln > span{transform:translateY(105%);transition:transform 1.2s var(--ease)}
-.loaded .ln > span{transform:none}
-.loaded .ln:nth-child(2) > span{transition-delay:.12s}
 .load .fade{opacity:0;transform:translateY(16px);transition:opacity 1s var(--ease) .5s,transform 1s var(--ease) .5s}
 .loaded .fade{opacity:1;transform:none}
 
@@ -400,19 +382,16 @@ footer{margin-top:clamp(40px,6vw,80px);padding-top:28px;border-top:1px solid var
   .stats{grid-template-columns:1fr 1fr}
   .steps{grid-template-columns:1fr 1fr}
   .demo-grid{grid-template-columns:1fr}
-  .f1{right:6%;top:30%}.f3{display:none}
 }
 @media (max-width:820px){
-  .hero-top p{display:none}
-  .hero-bottom{flex-direction:column;align-items:stretch}
-  .hero-cta{width:100%}
-  .float{display:none}
   .about-grid,.team-grid,.contact-grid{grid-template-columns:1fr}
   .contact-left{padding-right:0;border-right:0;border-bottom:1px solid var(--dark-line);padding-bottom:36px;margin-bottom:20px}
   form.book,.success{padding-left:0}
   .pricing{grid-template-columns:1fr}
   .plan.hl{transform:none}
   .sec-head{flex-direction:column}
+  .hero-foot{flex-direction:column;align-items:flex-start}
+  .hero-svcs{gap:8px 18px}
   .sparks{display:none}
   .svc-row{gap:12px}
   .faq-q{grid-template-columns:40px 1fr 32px;gap:10px}
@@ -429,7 +408,6 @@ footer{margin-top:clamp(40px,6vw,80px);padding-top:28px;border-top:1px solid var
   .svc-inner{grid-template-columns:1fr}
   .svc-visual,.svc-checks{grid-column:1}
   .row2{grid-template-columns:1fr;gap:0}
-  .wordmark{font-size:clamp(56px,19vw,96px)}
   .cart-foot .btn{width:100%}
   .step{min-height:0;gap:6px}
   .step .ico{margin:18px 0 16px}
@@ -437,7 +415,7 @@ footer{margin-top:clamp(40px,6vw,80px);padding-top:28px;border-top:1px solid var
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
-  .reveal,.stagger > *,.split .wd > span,.load .ln > span,.load .fade{opacity:1!important;transform:none!important;filter:none!important}
+  .reveal,.stagger > *,.split .wd > span,.load .fade{opacity:1!important;transform:none!important;filter:none!important}
   html{scroll-behavior:auto}
 }
 </style>
@@ -480,33 +458,20 @@ footer{margin-top:clamp(40px,6vw,80px);padding-top:28px;border-top:1px solid var
 
   <!-- HERO -->
   <section class="section hero" id="top">
-    <div class="blobs" aria-hidden="true"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div></div>
-    <div class="grain" aria-hidden="true"></div>
-
-    <div class="float f1" aria-hidden="true"><div class="ic" style="background:var(--accent-soft)">🍕</div><div><b>Ny ordre #1042</b><small>2× Margherita · afhentning 18:30</small></div></div>
-    <div class="float f2" aria-hidden="true"><div class="ic" style="background:#DCFCE7">✓</div><div><b>Bord til 4 bekræftet</b><small>Fredag kl. 19:00</small></div></div>
-    <div class="float f3" aria-hidden="true"><div class="ic" style="background:#E0E7FF">📈</div><div><b>Menukort opdateret</b><small>2 nye retter er online</small></div></div>
-
-    <div class="hero-top fade">
-      <p><b>Hjemmesider, ordresystemer og grafisk design</b> til restauranter, caféer og små butikker.</p>
-    </div>
-
-    <div class="hero-bottom">
-      <div>
-        <p class="hero-kicker fade"><b>FRIDAY studio</b> bygger de digitale løsninger, der får flere kunder ind ad døren.</p>
-        <h1 class="wordmark" aria-label="FRIDAY studio">
-          <span class="ln"><span>FRIDAY</span></span>
-          <span class="ln"><span><em>studio</em></span></span>
-        </h1>
-      </div>
-      <div class="hero-cta fade">
+    <div class="hero-media" id="heroMedia" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <span class="hero-kicker fade"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18" fill="#A8E6C1"/><g transform="translate(6 6) scale(.81)"><g fill="#0F1F1A"><path d="M13 54V24a14 14 0 0 1 14-14h17v13H27v7h12a6 6 0 0 1 0 12H27v12Z"/><path d="M45 23c0-8.5 5.5-13.5 13-13.5 0 8.5-5.5 13.5-13 13.5Z"/></g><path d="M47.5 20.5 55 13" stroke="#A8E6C1" stroke-width="1.6" stroke-linecap="round"/></g></svg>FRIDAY studio</span>
+      <h1 class="split">Vi bygger det digitale, <span class="soft">så du kan passe din forretning.</span></h1>
+      <p class="hero-sub fade">Hjemmesider, ordresystemer og grafisk design til restauranter, caféer og små butikker.</p>
+      <div class="hero-actions fade">
         <a href="#kontakt" class="btn btn-accent">Book et gratis møde <span class="arr">→</span></a>
-        <div class="svc-mini">
-          <a href="#ydelser" data-open="0"><span>Hjemmesider</span><span>→</span></a>
-          <a href="#ydelser" data-open="1"><span>Ordresystemer</span><span>→</span></a>
-          <a href="#ydelser" data-open="2"><span>Skræddersyede systemer</span><span>→</span></a>
-          <a href="#ydelser" data-open="3"><span>Grafisk design</span><span>→</span></a>
-        </div>
+        <a href="#ydelser" class="btn btn-glass">Se vores ydelser</a>
+      </div>
+      <div class="hero-foot fade">
+        <nav class="hero-svcs" aria-label="Ydelser">
+          <a href="#ydelser" data-open="0">Hjemmesider</a><a href="#ydelser" data-open="1">Ordresystemer</a><a href="#ydelser" data-open="2">Skræddersyede systemer</a><a href="#ydelser" data-open="3">Grafisk design</a>
+        </nav>
+        <div class="clip-nav" id="clipNav"></div>
       </div>
     </div>
   </section>
@@ -945,6 +910,53 @@ footer{margin-top:clamp(40px,6vw,80px);padding-top:28px;border-top:1px solid var
   // toast
   let tt;
   const toast = msg => { const t = $('#toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(tt); tt = setTimeout(() => t.classList.remove('show'), 2400); };
+
+  // ---------- HERO VIDEO ----------
+  // Free clips from Mixkit (Mixkit Stock Video Free License)
+  const CLIPS = [4385, 3574, 219, 41222];
+  const DUR = 7000;
+  const media = $('#heroMedia'), navEl = $('#clipNav');
+  const layers = CLIPS.map(id => {
+    const d = document.createElement('div');
+    d.className = 'clip';
+    d.style.backgroundImage = `url(https://assets.mixkit.co/videos/${id}/${id}-thumb-720-0.jpg)`;
+    media.append(d);
+    return d;
+  });
+  const bars = CLIPS.map((_, i) => {
+    const b = document.createElement('button');
+    b.setAttribute('aria-label', 'Vis klip ' + (i + 1));
+    b.innerHTML = '<i></i>'; navEl.append(b);
+    b.addEventListener('click', () => show(i));
+    return b;
+  });
+  navEl.style.setProperty('--dur', DUR + 'ms');
+  const addVideo = (i) => {
+    const l = layers[i];
+    if (l.querySelector('video') || reduce) return;
+    const v = document.createElement('video');
+    v.muted = true; v.playsInline = true; v.loop = true; v.preload = 'auto';
+    v.setAttribute('muted', ''); v.setAttribute('playsinline', '');
+    v.src = `https://assets.mixkit.co/videos/${CLIPS[i]}/${CLIPS[i]}-720.mp4`;
+    v.addEventListener('error', () => v.remove());
+    l.append(v);
+  };
+  let cur = -1, timer;
+  const show = i => {
+    clearTimeout(timer);
+    cur = i;
+    addVideo(i); addVideo((i + 1) % CLIPS.length);
+    layers.forEach((l, j) => {
+      l.classList.toggle('on', j === i);
+      const v = l.querySelector('video');
+      if (v) { if (j === i) { v.currentTime = 0; v.play().catch(() => {}); } else setTimeout(() => v.pause(), 1500); }
+    });
+    bars.forEach((b, j) => { b.classList.remove('on'); b.classList.toggle('done', j < i); });
+    void navEl.offsetWidth;
+    bars[i].classList.add('on');
+    if (!reduce) timer = setTimeout(() => show((cur + 1) % CLIPS.length), DUR);
+  };
+  show(0);
 
   // ---------- ORDER DEMO ----------
   const MENU = {

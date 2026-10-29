@@ -13,3 +13,5 @@ Ting der skal opdateres senere:
 ## Billeder
 
 Fotos er fra [Unsplash](https://unsplash.com) (fri licens) og hentes direkte fra images.unsplash.com. Fotografer: Pablo Pacheco, Keghan Crossland, Jason Leung, Steph Quernemoen, Roberto Cortese, Björn Antonissen, Christopher Gower, Louis Hansel, Anete Lūsiņa og Priscilla Du Preez.
+
+Videoerne i toppen af siden er fra [Mixkit](https://mixkit.co) (Mixkit Stock Video Free License): klip 4385, 3574, 219 og 41222. Hvis en video ikke kan indlæses, vises klippets stillbillede i stedet.
