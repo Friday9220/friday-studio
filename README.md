@@ -1,6 +1,6 @@
-# Friday Studio
+# FRIDAY studio
 
-Hjemmeside for Friday Studio: hjemmesider, ordresystemer, skræddersyede systemer og grafisk design til små virksomheder.
+Hjemmeside for FRIDAY studio: hjemmesider, ordresystemer, skræddersyede systemer og grafisk design til små virksomheder.
 
 Hele siden ligger i `index.html` (HTML, CSS og JavaScript i én fil) og kan hostes direkte med GitHub Pages.
 

@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Friday Studio · Hjemmesider, ordresystemer og grafisk design</title>
-<meta name="description" content="Friday Studio bygger hjemmesider, ordresystemer og grafisk design til restauranter, caféer og små butikker. Book et gratis møde.">
+<title>FRIDAY studio · Hjemmesider, ordresystemer og grafisk design</title>
+<meta name="description" content="FRIDAY studio bygger hjemmesider, ordresystemer og grafisk design til restauranter, caféer og små butikker. Book et gratis møde.">
 <meta name="theme-color" content="#ECEFF4">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23111318'/%3E%3Crect x='19' y='16' width='26' height='8' rx='4' fill='%23fff'/%3E%3Crect x='19' y='16' width='8' height='32' rx='4' fill='%23fff'/%3E%3Ccircle cx='40' cy='35' r='5' fill='%23FF5B2E'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23111318'/%3E%3Crect x='19' y='16' width='26' height='8' rx='4' fill='%23fff'/%3E%3Crect x='19' y='16' width='8' height='32' rx='4' fill='%23fff'/%3E%3Ccircle cx='40' cy='35' r='5' fill='%231A6DFF'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -24,8 +24,8 @@
   --dark-2:#1A1D24;
   --dark-3:#252932;
   --dark-line:rgba(255,255,255,.09);
-  --accent:#FF5B2E;
-  --accent-soft:#FFE7DF;
+  --accent:#1A6DFF;
+  --accent-soft:#E3EDFF;
   --ok:#22C55E;
   --radius:24px;
   --radius-sm:14px;
@@ -54,7 +54,7 @@ h2{font-size:clamp(36px,5.4vw,72px)}
 h3{font-size:clamp(20px,1.8vw,24px);letter-spacing:-.015em}
 
 .label{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:var(--ink-2)}
-.label::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(255,91,46,.15)}
+.label::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(26,109,255,.15)}
 .dark .label{color:rgba(255,255,255,.75)}
 .sec-head{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;margin-bottom:clamp(32px,5vw,64px)}
 .sec-head p{max-width:420px;color:var(--ink-2)}
@@ -67,8 +67,8 @@ h3{font-size:clamp(20px,1.8vw,24px);letter-spacing:-.015em}
 
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:48px;padding:0 22px;border-radius:999px;font-weight:500;font-size:15px;transition:transform .3s var(--ease),background .3s,color .3s,box-shadow .3s;white-space:nowrap}
 .btn:hover{transform:translateY(-2px)}
-.btn-accent{background:var(--accent);color:#fff;box-shadow:0 8px 24px -8px rgba(255,91,46,.6)}
-.btn-accent:hover{background:#ff4815}
+.btn-accent{background:var(--accent);color:#fff;box-shadow:0 8px 24px -8px rgba(26,109,255,.6)}
+.btn-accent:hover{background:#0B5BEB}
 .btn-dark{background:var(--ink);color:#fff}
 .btn-light{background:#fff;color:var(--ink)}
 .btn-ghost{border:1px solid var(--line-strong)}
@@ -100,15 +100,15 @@ h3{font-size:clamp(20px,1.8vw,24px);letter-spacing:-.015em}
 .hero{min-height:min(860px,calc(100svh - 96px));display:flex;flex-direction:column;justify-content:space-between;padding:var(--pad);background:#E6EAF1;isolation:isolate}
 .blobs{position:absolute;inset:0;z-index:-1;overflow:hidden;filter:blur(60px) saturate(1.15)}
 .blob{position:absolute;border-radius:50%;opacity:.85;will-change:transform}
-.b1{width:56vw;height:56vw;max-width:780px;max-height:780px;background:radial-gradient(circle at 30% 30%,#FFB59C,#FF7A50 55%,transparent 70%);right:-10%;top:-25%;animation:drift1 18s ease-in-out infinite alternate}
+.b1{width:56vw;height:56vw;max-width:780px;max-height:780px;background:radial-gradient(circle at 30% 30%,#B9D6FF,#4F8DFF 55%,transparent 70%);right:-10%;top:-25%;animation:drift1 18s ease-in-out infinite alternate}
 .b2{width:48vw;height:48vw;max-width:640px;max-height:640px;background:radial-gradient(circle at 50% 50%,#C9C2FF,#9C93F5 50%,transparent 70%);left:-12%;bottom:-30%;animation:drift2 22s ease-in-out infinite alternate}
-.b3{width:36vw;height:36vw;max-width:520px;max-height:520px;background:radial-gradient(circle,#BFE3FF,#8CC8F7 50%,transparent 70%);left:35%;top:10%;animation:drift3 16s ease-in-out infinite alternate}
+.b3{width:36vw;height:36vw;max-width:520px;max-height:520px;background:radial-gradient(circle,#C8F5E8,#7FD9C4 50%,transparent 70%);left:35%;top:10%;animation:drift3 16s ease-in-out infinite alternate}
 .b4{width:30vw;height:30vw;max-width:420px;max-height:420px;background:radial-gradient(circle,#fff,transparent 65%);left:10%;top:0;animation:drift2 20s ease-in-out infinite alternate-reverse}
 @keyframes drift1{to{transform:translate(-14%,18%) scale(1.15) rotate(25deg)}}
 @keyframes drift2{to{transform:translate(18%,-14%) scale(1.1)}}
 @keyframes drift3{to{transform:translate(-20%,22%) scale(.85)}}
 .grain{position:absolute;inset:0;z-index:-1;opacity:.35;mix-blend-mode:soft-light;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
-.hero-top{display:flex;justify-content:space-between;align-items:flex-start;gap:24px}
+.hero-top{display:flex;justify-content:flex-end;align-items:flex-start;gap:24px}
 .status{display:inline-flex;align-items:center;gap:10px;padding:8px 14px 8px 12px;border-radius:999px;background:rgba(255,255,255,.6);backdrop-filter:blur(10px);font-size:13.5px;font-weight:500}
 .status i{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 rgba(34,197,94,.6);animation:pulse 2s infinite}
 @keyframes pulse{70%{box-shadow:0 0 0 9px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
@@ -162,33 +162,31 @@ h3{font-size:clamp(20px,1.8vw,24px);letter-spacing:-.015em}
 /* ---------- SERVICES ---------- */
 .svc-list{border-top:1px solid var(--dark-line)}
 .svc{border-bottom:1px solid var(--dark-line)}
-.svc-row{display:grid;grid-template-columns:80px 1fr auto;align-items:center;gap:20px;width:100%;text-align:left;padding:26px 0;color:#fff}
-.svc-num{font-size:14px;color:rgba(255,255,255,.45);transition:color .3s}
+.svc-row{display:grid;grid-template-columns:1fr auto;align-items:center;gap:20px;width:100%;text-align:left;padding:26px 0;color:#fff}
 .svc-title{font-family:var(--font-head);font-size:clamp(22px,2.6vw,36px);font-weight:500;letter-spacing:-.03em;transition:color .35s,transform .5s var(--ease)}
 .svc-arrow{width:44px;height:44px;border-radius:50%;background:var(--dark-3);display:grid;place-items:center;transition:background .35s,transform .5s var(--ease)}
 .svc-arrow svg{width:16px;height:16px}
 .svc-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .6s var(--ease)}
 .svc-body > div{overflow:hidden}
-.svc-inner{display:grid;grid-template-columns:80px 1.1fr 1fr 1fr;gap:20px;padding:0 0 30px}
-.svc-inner p{color:rgba(255,255,255,.62);font-size:15px;grid-column:2}
-.svc-visual{border-radius:16px;min-height:170px;position:relative;overflow:hidden;grid-column:3}
-.svc-checks{list-style:none;display:flex;flex-direction:column;gap:9px;font-size:14.5px;color:rgba(255,255,255,.85);grid-column:4}
+.svc-inner{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:20px;padding:0 0 30px}
+.svc-inner p{color:rgba(255,255,255,.62);font-size:15px;grid-column:1}
+.svc-visual{border-radius:16px;min-height:170px;position:relative;overflow:hidden;grid-column:2}
+.svc-checks{list-style:none;display:flex;flex-direction:column;gap:9px;font-size:14.5px;color:rgba(255,255,255,.85);grid-column:3}
 .svc-checks li{display:flex;gap:10px;align-items:center}
 .svc-checks li::before{content:"";width:16px;height:16px;border-radius:50%;flex-shrink:0;border:1.5px solid var(--accent);background:radial-gradient(circle,var(--accent) 35%,transparent 40%)}
 .svc.open .svc-body{grid-template-rows:1fr}
 .svc.open .svc-title{color:var(--accent);transform:translateX(6px)}
-.svc.open .svc-num{color:var(--accent)}
 .svc.open .svc-arrow{background:var(--accent);transform:rotate(45deg)}
 .svc-inner > *{opacity:0;transform:translateY(14px);transition:opacity .5s,transform .6s var(--ease)}
 .svc.open .svc-inner > *{opacity:1;transform:none}
-.svc.open .svc-inner > *:nth-child(3){transition-delay:.08s}
-.svc.open .svc-inner > *:nth-child(4){transition-delay:.16s}
+.svc.open .svc-inner > *:nth-child(2){transition-delay:.08s}
+.svc.open .svc-inner > *:nth-child(3){transition-delay:.16s}
 /* service visuals */
-.v-web{background:linear-gradient(135deg,#F3E9FF,#FFE1D6)}
+.v-web{background:linear-gradient(135deg,#E3EDFF,#D6F4EC)}
 .v-web .bw{position:absolute;left:12%;right:12%;top:16%;bottom:-10%;background:#fff;border-radius:10px 10px 0 0;box-shadow:0 10px 30px -10px rgba(0,0,0,.3)}
 .v-web .bw::before{content:"";position:absolute;left:10px;top:9px;width:28px;height:6px;border-radius:3px;background:radial-gradient(circle at 3px 3px,#FF5F57 3px,transparent 3.5px),radial-gradient(circle at 13px 3px,#FEBC2E 3px,transparent 3.5px),radial-gradient(circle at 23px 3px,#28C840 3px,transparent 3.5px)}
-.v-web .bw::after{content:"";position:absolute;left:10px;right:10px;top:26px;bottom:0;border-radius:6px;background:linear-gradient(120deg,#111318 0 45%,#FF5B2E 45% 46%,#ECEFF4 46%)}
-.v-order{background:linear-gradient(135deg,#FFE7DF,#FFD2A8)}
+.v-web .bw::after{content:"";position:absolute;left:10px;right:10px;top:26px;bottom:0;border-radius:6px;background:linear-gradient(120deg,#111318 0 45%,#1A6DFF 45% 46%,#ECEFF4 46%)}
+.v-order{background:linear-gradient(135deg,#E3EDFF,#C6DBFF)}
 .v-sys{background:#1F232B}
 .v-gfx{background:linear-gradient(135deg,#DDE9FF,#EDE6FF)}
 
@@ -232,7 +230,7 @@ h3{font-size:clamp(20px,1.8vw,24px);letter-spacing:-.015em}
 .ticket-top b{font-family:var(--font-head);font-size:16px}
 .ticket ul{list-style:none;font-size:13.5px;color:rgba(255,255,255,.75);margin-bottom:10px}
 .st{font-size:12px;padding:4px 10px;border-radius:999px;font-weight:600}
-.st.new{background:rgba(255,91,46,.18);color:#FF8A69}
+.st.new{background:rgba(26,109,255,.18);color:#6EA4FF}
 .st.oven{background:rgba(250,204,21,.16);color:#FACC15}
 .st.ready{background:rgba(34,197,94,.16);color:#4ADE80}
 .ticket .adv{width:100%;padding:9px;border-radius:10px;background:var(--dark-3);font-size:13px;color:#fff;transition:background .25s}
@@ -337,7 +335,7 @@ form.book{padding-left:clamp(20px,4vw,60px);display:flex;flex-direction:column;g
 .chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
 .times{display:flex;gap:6px;flex-wrap:wrap}
 form.book .btn{margin-top:22px;align-self:flex-start}
-.form-msg{font-size:13.5px;color:#FF8A69;min-height:20px;margin-top:6px}
+.form-msg{font-size:13.5px;color:#6EA4FF;min-height:20px;margin-top:6px}
 .success{display:none;flex-direction:column;align-items:flex-start;justify-content:center;gap:14px;padding-left:clamp(20px,4vw,60px)}
 .success .ck{width:64px;height:64px;border-radius:50%;background:var(--accent);display:grid;place-items:center;animation:pop .6s var(--ease)}
 @keyframes pop{from{transform:scale(0)}}
@@ -399,7 +397,7 @@ footer{margin-top:clamp(40px,6vw,80px);padding-top:28px;border-top:1px solid var
   .plan.hl{transform:none}
   .sec-head{flex-direction:column}
   .sparks{display:none}
-  .svc-row{grid-template-columns:44px 1fr auto;gap:12px}
+  .svc-row{gap:12px}
   .faq-q{grid-template-columns:40px 1fr 32px;gap:10px}
   .faq-a p{padding:0 10px 22px 50px}
 }
@@ -407,7 +405,6 @@ footer{margin-top:clamp(40px,6vw,80px);padding-top:28px;border-top:1px solid var
   :root{--radius:20px}
   .nav-inner{padding-left:16px;height:58px}
   .mobile-menu{top:66px}
-  .logo small{display:none}
   .stats,.steps,.roles{grid-template-columns:1fr}
   .role.big{grid-row:auto}
   .stat{min-height:150px}
@@ -435,9 +432,9 @@ footer{margin-top:clamp(40px,6vw,80px);padding-top:28px;border-top:1px solid var
   <!-- NAV -->
   <header class="nav" id="nav">
     <div class="nav-inner">
-      <a href="#top" class="logo" aria-label="Friday Studio forside">
-        <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18" fill="#111318"/><rect x="19" y="16" width="26" height="8" rx="4" fill="#fff"/><rect x="19" y="16" width="8" height="32" rx="4" fill="#fff"/><circle cx="40" cy="35" r="5" fill="#FF5B2E"/></svg>
-        <span>friday <small>studio</small></span>
+      <a href="#top" class="logo" aria-label="FRIDAY studio forside">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18" fill="#111318"/><rect x="19" y="16" width="26" height="8" rx="4" fill="#fff"/><rect x="19" y="16" width="8" height="32" rx="4" fill="#fff"/><circle cx="40" cy="35" r="5" fill="#1A6DFF"/></svg>
+        <span>FRIDAY <small>studio</small></span>
       </a>
       <nav class="nav-links" aria-label="Hovedmenu">
         <a href="#ydelser">Ydelser</a>
@@ -473,16 +470,15 @@ footer{margin-top:clamp(40px,6vw,80px);padding-top:28px;border-top:1px solid var
     <div class="float f3" aria-hidden="true"><div class="ic" style="background:#E0E7FF">📈</div><div><b>Menukort opdateret</b><small>2 nye retter er online</small></div></div>
 
     <div class="hero-top fade">
-      <span class="status"><i></i>Ledig til nye projekter</span>
       <p><b>Hjemmesider, ordresystemer og grafisk design</b> til restauranter, caféer og små butikker.</p>
     </div>
 
     <div class="hero-bottom">
       <div>
-        <p class="hero-kicker fade"><b>Friday Studio</b> bygger de digitale løsninger, der får flere kunder ind ad døren.</p>
-        <h1 class="wordmark" aria-label="Friday Studio">
-          <span class="ln"><span>Friday</span></span>
-          <span class="ln"><span><em>Studio</em></span></span>
+        <p class="hero-kicker fade"><b>FRIDAY studio</b> bygger de digitale løsninger, der får flere kunder ind ad døren.</p>
+        <h1 class="wordmark" aria-label="FRIDAY studio">
+          <span class="ln"><span>FRIDAY</span></span>
+          <span class="ln"><span><em>studio</em></span></span>
         </h1>
       </div>
       <div class="hero-cta fade">
@@ -509,7 +505,7 @@ footer{margin-top:clamp(40px,6vw,80px);padding-top:28px;border-top:1px solid var
   <section class="section" id="om">
     <div class="about-grid">
       <div><span class="label">Hvem vi er</span></div>
-      <p class="statement" id="statement">Vi er et hold af ingeniører og designere, der bygger [hjemmesider], [ordresystemer] og [grafisk design] til små virksomheder. Du får én fast kontakt, ærlige priser og løsninger, der virker fra dag ét, så du kan bruge tiden på din forretning.</p>
+      <p class="statement" id="statement">Vi er et hold, der bygger [hjemmesider], [ordresystemer] og [grafisk design] til små virksomheder. Du får én fast kontakt, ærlige priser og løsninger, der virker fra dag ét, så du kan bruge tiden på din forretning.</p>
     </div>
     <div class="stats stagger">
       <div class="stat"><strong data-count="1">0</strong><span>fast kontaktperson<br>fra start til slut</span></div>
@@ -530,7 +526,7 @@ footer{margin-top:clamp(40px,6vw,80px);padding-top:28px;border-top:1px solid var
 
       <div class="svc">
         <button class="svc-row" aria-expanded="false">
-          <span class="svc-num">(01)</span><span class="svc-title">Hjemmesider</span>
+          <span class="svc-title">Hjemmesider</span>
           <span class="svc-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12 12 4M5 4h7v7"/></svg></span>
         </button>
         <div class="svc-body"><div><div class="svc-inner">
@@ -542,27 +538,27 @@ footer{margin-top:clamp(40px,6vw,80px);padding-top:28px;border-top:1px solid var
 
       <div class="svc">
         <button class="svc-row" aria-expanded="false">
-          <span class="svc-num">(02)</span><span class="svc-title">Ordresystemer</span>
+          <span class="svc-title">Ordresystemer</span>
           <span class="svc-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12 12 4M5 4h7v7"/></svg></span>
         </button>
         <div class="svc-body"><div><div class="svc-inner">
           <p>Dit eget bestillingssystem til pizzeria, café eller restaurant. Kunderne bestiller direkte hos dig, og du slipper for høje gebyrer til mellemmænd.</p>
           <div class="svc-visual v-order">
-            <svg viewBox="0 0 300 170" style="position:absolute;inset:0;width:100%;height:100%"><rect x="40" y="22" width="120" height="150" rx="14" fill="#fff"/><rect x="52" y="36" width="60" height="8" rx="4" fill="#111318"/><rect x="52" y="56" width="96" height="26" rx="7" fill="#ECEFF4"/><rect x="52" y="88" width="96" height="26" rx="7" fill="#ECEFF4"/><rect x="52" y="120" width="96" height="26" rx="7" fill="#ECEFF4"/><circle cx="136" cy="69" r="7" fill="#FF5B2E"/><circle cx="136" cy="101" r="7" fill="#111318"/><circle cx="136" cy="133" r="7" fill="#111318"/><rect x="172" y="40" width="100" height="60" rx="12" fill="#111318"/><rect x="184" y="52" width="40" height="6" rx="3" fill="#FF5B2E"/><rect x="184" y="66" width="70" height="5" rx="2.5" fill="#555"/><rect x="184" y="78" width="54" height="5" rx="2.5" fill="#555"/></svg>
+            <svg viewBox="0 0 300 170" style="position:absolute;inset:0;width:100%;height:100%"><rect x="40" y="22" width="120" height="150" rx="14" fill="#fff"/><rect x="52" y="36" width="60" height="8" rx="4" fill="#111318"/><rect x="52" y="56" width="96" height="26" rx="7" fill="#ECEFF4"/><rect x="52" y="88" width="96" height="26" rx="7" fill="#ECEFF4"/><rect x="52" y="120" width="96" height="26" rx="7" fill="#ECEFF4"/><circle cx="136" cy="69" r="7" fill="#1A6DFF"/><circle cx="136" cy="101" r="7" fill="#111318"/><circle cx="136" cy="133" r="7" fill="#111318"/><rect x="172" y="40" width="100" height="60" rx="12" fill="#111318"/><rect x="184" y="52" width="40" height="6" rx="3" fill="#1A6DFF"/><rect x="184" y="66" width="70" height="5" rx="2.5" fill="#555"/><rect x="184" y="78" width="54" height="5" rx="2.5" fill="#555"/></svg>
           </div>
-          <ul class="svc-checks"><li>Online bestilling og betaling</li><li>Køkkenskærm i realtid</li><li>Afhentning og levering</li><li>Bordbestilling</li><li>Ingen gebyr pr. ordre</li></ul>
+          <ul class="svc-checks"><li>Online bestilling</li><li>Køkkenskærm i realtid</li><li>Afhentning og levering</li><li>Bordbestilling</li><li>Ingen gebyr pr. ordre</li></ul>
         </div></div></div>
       </div>
 
       <div class="svc">
         <button class="svc-row" aria-expanded="false">
-          <span class="svc-num">(03)</span><span class="svc-title">Skræddersyede systemer</span>
+          <span class="svc-title">Skræddersyede systemer</span>
           <span class="svc-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12 12 4M5 4h7v7"/></svg></span>
         </button>
         <div class="svc-body"><div><div class="svc-inner">
-          <p>Har du en idé eller et problem, der kræver et system? Som ingeniører bygger vi det meste: bookingsystemer, lagerstyring, interne værktøjer og integrationer.</p>
+          <p>Har du en idé eller et problem, der kræver et system? Vi bygger det meste: bookingsystemer, lagerstyring, interne værktøjer og integrationer.</p>
           <div class="svc-visual v-sys">
-            <svg viewBox="0 0 300 170" style="position:absolute;inset:0;width:100%;height:100%" font-family="monospace" font-size="11"><text x="22" y="36" fill="#7D8494">// booking.ts</text><text x="22" y="58" fill="#FF8A69">const</text><text x="64" y="58" fill="#fff">slot = await</text><text x="22" y="78" fill="#fff">  findFreeTable(</text><text x="22" y="98" fill="#9C93F5">    guests: 4,</text><text x="22" y="118" fill="#9C93F5">    time: "19:00"</text><text x="22" y="138" fill="#fff">  );</text><rect x="210" y="110" width="68" height="36" rx="10" fill="#22C55E" opacity=".16"/><text x="222" y="132" fill="#4ADE80">✓ ledig</text></svg>
+            <svg viewBox="0 0 300 170" style="position:absolute;inset:0;width:100%;height:100%" font-family="monospace" font-size="11"><text x="22" y="36" fill="#7D8494">// booking.ts</text><text x="22" y="58" fill="#6EA4FF">const</text><text x="64" y="58" fill="#fff">slot = await</text><text x="22" y="78" fill="#fff">  findFreeTable(</text><text x="22" y="98" fill="#9C93F5">    guests: 4,</text><text x="22" y="118" fill="#9C93F5">    time: "19:00"</text><text x="22" y="138" fill="#fff">  );</text><rect x="210" y="110" width="68" height="36" rx="10" fill="#22C55E" opacity=".16"/><text x="222" y="132" fill="#4ADE80">✓ ledig</text></svg>
           </div>
           <ul class="svc-checks"><li>Booking og kalender</li><li>Lager og indkøb</li><li>Kundeklubber og loyalitet</li><li>Dashboards og rapporter</li><li>Integration med kasse</li></ul>
         </div></div></div>
@@ -570,13 +566,13 @@ footer{margin-top:clamp(40px,6vw,80px);padding-top:28px;border-top:1px solid var
 
       <div class="svc">
         <button class="svc-row" aria-expanded="false">
-          <span class="svc-num">(04)</span><span class="svc-title">Grafisk design</span>
+          <span class="svc-title">Grafisk design</span>
           <span class="svc-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12 12 4M5 4h7v7"/></svg></span>
         </button>
         <div class="svc-body"><div><div class="svc-inner">
           <p>Et stærkt logo og en sammenhængende visuel identitet, der går igen på skiltet, menukortet, flyeren og hjemmesiden. Leveret trykklart.</p>
           <div class="svc-visual v-gfx">
-            <svg viewBox="0 0 300 170" style="position:absolute;inset:0;width:100%;height:100%"><rect x="34" y="30" width="86" height="118" rx="8" fill="#fff" transform="rotate(-6 77 89)"/><circle cx="74" cy="66" r="14" fill="#FF5B2E" transform="rotate(-6 77 89)"/><rect x="50" y="92" width="54" height="5" rx="2.5" fill="#111318" transform="rotate(-6 77 89)"/><rect x="50" y="104" width="40" height="4" rx="2" fill="#B4BAC6" transform="rotate(-6 77 89)"/><rect x="128" y="22" width="86" height="124" rx="8" fill="#111318"/><text x="171" y="58" text-anchor="middle" fill="#fff" font-family="Manrope,sans-serif" font-weight="700" font-size="14">MENU</text><rect x="142" y="74" width="58" height="4" rx="2" fill="#555"/><rect x="142" y="86" width="44" height="4" rx="2" fill="#555"/><rect x="142" y="98" width="52" height="4" rx="2" fill="#555"/><circle cx="252" cy="70" r="28" fill="#fff"/><rect x="241" y="56" width="20" height="6" rx="3" fill="#111318"/><rect x="241" y="56" width="6" height="26" rx="3" fill="#111318"/><circle cx="258" cy="74" r="4" fill="#FF5B2E"/></svg>
+            <svg viewBox="0 0 300 170" style="position:absolute;inset:0;width:100%;height:100%"><rect x="34" y="30" width="86" height="118" rx="8" fill="#fff" transform="rotate(-6 77 89)"/><circle cx="74" cy="66" r="14" fill="#1A6DFF" transform="rotate(-6 77 89)"/><rect x="50" y="92" width="54" height="5" rx="2.5" fill="#111318" transform="rotate(-6 77 89)"/><rect x="50" y="104" width="40" height="4" rx="2" fill="#B4BAC6" transform="rotate(-6 77 89)"/><rect x="128" y="22" width="86" height="124" rx="8" fill="#111318"/><text x="171" y="58" text-anchor="middle" fill="#fff" font-family="Manrope,sans-serif" font-weight="700" font-size="14">MENU</text><rect x="142" y="74" width="58" height="4" rx="2" fill="#555"/><rect x="142" y="86" width="44" height="4" rx="2" fill="#555"/><rect x="142" y="98" width="52" height="4" rx="2" fill="#555"/><circle cx="252" cy="70" r="28" fill="#fff"/><rect x="241" y="56" width="20" height="6" rx="3" fill="#111318"/><rect x="241" y="56" width="6" height="26" rx="3" fill="#111318"/><circle cx="258" cy="74" r="4" fill="#1A6DFF"/></svg>
           </div>
           <ul class="svc-checks"><li>Logo og visuel identitet</li><li>Menukort</li><li>Flyers og plakater</li><li>Skilte og visitkort</li><li>Sociale medier</li></ul>
         </div></div></div>
@@ -622,7 +618,7 @@ footer{margin-top:clamp(40px,6vw,80px);padding-top:28px;border-top:1px solid var
       </div>
     </div>
     <div class="demo-note reveal">
-      <span>✓ Ingen gebyr pr. ordre</span><span>✓ Dit eget logo og farver</span><span>✓ MobilePay og kort</span><span>✓ Virker på alle skærme</span>
+      <span>✓ Ingen gebyr pr. ordre</span><span>✓ Dit eget logo og farver</span><span>✓ Afhentning og levering</span><span>✓ Virker på alle skærme</span>
     </div>
   </section>
 
@@ -648,8 +644,8 @@ footer{margin-top:clamp(40px,6vw,80px);padding-top:28px;border-top:1px solid var
     <div class="team-grid">
       <div class="team-copy">
         <span class="label">Holdet bag</span>
-        <h2 class="split" style="margin-top:18px">Ingeniører med sans for design</h2>
-        <p class="reveal">Friday Studio er grundlagt af en ingeniør, der kan bygge det meste. Bag virksomheden står et hold, der sidder klar til at hjælpe dig, fra det første møde til længe efter lanceringen. Vi taler ikke i tekniske termer. Vi løser dine problemer.</p>
+        <h2 class="split" style="margin-top:18px">Holdet bag FRIDAY studio</h2>
+        <p class="reveal">Bag FRIDAY studio står et hold, der sidder klar til at hjælpe dig, fra det første møde til længe efter lanceringen. Vi taler ikke i tekniske termer. Vi løser dine problemer.</p>
         <a href="#kontakt" class="btn btn-dark reveal">Mød os til en snak <span class="arr">→</span></a>
       </div>
       <div class="roles stagger">
@@ -657,7 +653,7 @@ footer{margin-top:clamp(40px,6vw,80px);padding-top:28px;border-top:1px solid var
           <span class="ring"></span>
           <div class="av" style="background:var(--accent);color:#fff">FS</div>
           <div>
-            <h3 style="margin-top:28px">Grundlægger og ingeniør</h3>
+            <h3 style="margin-top:28px">Grundlægger og udvikler</h3>
             <p>Står for teknikken bag ordresystemer og skræddersyede løsninger.</p>
             <ul><li>Systemudvikling</li><li>Databaser og integrationer</li><li>Sikkerhed og drift</li></ul>
           </div>
@@ -707,7 +703,7 @@ footer{margin-top:clamp(40px,6vw,80px);padding-top:28px;border-top:1px solid var
         </div>
         <div class="plan-body">
           <h5>Det får du</h5>
-          <ul><li>Online menu og bestilling</li><li>Betaling med kort og MobilePay</li><li>Køkkenskærm</li><li>Ingen gebyr pr. ordre</li><li>Opsætning og oplæring</li></ul>
+          <ul><li>Online menu og bestilling</li><li>Afhentning og levering</li><li>Køkkenskærm</li><li>Ingen gebyr pr. ordre</li><li>Opsætning og oplæring</li></ul>
           <a href="#kontakt" class="btn" data-topic="Ordresystem">Book et møde</a>
         </div>
       </div>
@@ -726,7 +722,7 @@ footer{margin-top:clamp(40px,6vw,80px);padding-top:28px;border-top:1px solid var
       <div class="faq"><button class="faq-q" aria-expanded="false"><span class="n">02.</span><h3>Hvor lang tid tager det at lave en hjemmeside?</h3><span class="pm"></span></button><div class="faq-a"><div><p>En typisk hjemmeside tager 2–4 uger fra første møde til lancering. Et ordresystem tager normalt 3–6 uger, afhængigt af hvad du har brug for.</p></div></div></div>
       <div class="faq"><button class="faq-q" aria-expanded="false"><span class="n">03.</span><h3>Hvorfor ikke bare bruge Just Eat eller Wolt?</h3><span class="pm"></span></button><div class="faq-a"><div><p>De store platforme tager ofte en stor procentdel af hver ordre. Med dit eget ordresystem betaler du en fast pris, ejer dine kundedata og kan selv bestemme design, tilbud og kundeklub.</p></div></div></div>
       <div class="faq"><button class="faq-q" aria-expanded="false"><span class="n">04.</span><h3>Kan jeg selv opdatere menukort og priser?</h3><span class="pm"></span></button><div class="faq-a"><div><p>Ja. Du får et enkelt administrationspanel, hvor du kan ændre retter, priser, åbningstider og tilbud uden at kunne kode.</p></div></div></div>
-      <div class="faq"><button class="faq-q" aria-expanded="false"><span class="n">05.</span><h3>Kan I bygge andre systemer end ordresystemer?</h3><span class="pm"></span></button><div class="faq-a"><div><p>Ja. Vi er ingeniører og bygger det meste: bookingsystemer, lagerstyring, kundeklubber, interne værktøjer og integrationer med dit kassesystem. Fortæl os om din idé, så finder vi en løsning.</p></div></div></div>
+      <div class="faq"><button class="faq-q" aria-expanded="false"><span class="n">05.</span><h3>Kan I bygge andre systemer end ordresystemer?</h3><span class="pm"></span></button><div class="faq-a"><div><p>Ja. Vi bygger det meste: bookingsystemer, lagerstyring, kundeklubber, interne værktøjer og integrationer med dit kassesystem. Fortæl os om din idé, så finder vi en løsning.</p></div></div></div>
       <div class="faq"><button class="faq-q" aria-expanded="false"><span class="n">06.</span><h3>Hvad sker der efter lanceringen?</h3><span class="pm"></span></button><div class="faq-a"><div><p>Vi stopper ikke ved lanceringen. Vi tilbyder drift, opdateringer og support, så din løsning altid kører, og du har én at ringe til.</p></div></div></div>
     </div>
   </section>
@@ -783,16 +779,16 @@ footer{margin-top:clamp(40px,6vw,80px);padding-top:28px;border-top:1px solid var
 
     <footer>
       <div class="foot-top">
-        <a href="#top" class="logo light"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18" fill="#fff"/><rect x="19" y="16" width="26" height="8" rx="4" fill="#111318"/><rect x="19" y="16" width="8" height="32" rx="4" fill="#111318"/><circle cx="40" cy="35" r="5" fill="#FF5B2E"/></svg><span>friday <small>studio</small></span></a>
+        <a href="#top" class="logo light"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18" fill="#fff"/><rect x="19" y="16" width="26" height="8" rx="4" fill="#111318"/><rect x="19" y="16" width="8" height="32" rx="4" fill="#111318"/><circle cx="40" cy="35" r="5" fill="#1A6DFF"/></svg><span>FRIDAY <small>studio</small></span></a>
         <nav class="foot-links" aria-label="Footer">
           <a href="#ydelser">Ydelser</a><a href="#demo">Demo</a><a href="#proces">Proces</a><a href="#om-os">Om os</a><a href="#priser">Priser</a><a href="#faq">Spørgsmål</a><a href="#kontakt">Kontakt</a>
         </nav>
       </div>
       <div class="foot-bottom">
-        <span>© <span id="yr">2026</span> Friday Studio · Alle rettigheder forbeholdes</span>
+        <span>© <span id="yr">2026</span> FRIDAY studio · Alle rettigheder forbeholdes</span>
         <span>Hjemmesider · Ordresystemer · Grafisk design</span>
       </div>
-      <div class="giant" aria-hidden="true">friday studio</div>
+      <div class="giant" aria-hidden="true">FRIDAY studio</div>
     </footer>
   </section>
 
