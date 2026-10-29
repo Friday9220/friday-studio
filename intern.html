@@ -10,18 +10,22 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="intern.css?v=2">
+<link rel="stylesheet" href="intern.css?v=4">
 </head>
 <body>
 
 <header class="top">
-  <a class="brand" href="intern.html" aria-label="FRIDAY studio, kunder">
+  <a class="brand" href="#" data-view="overblik" aria-label="FRIDAY studio, overblik">
     <img src="assets/logo-mark.svg" alt="" width="34" height="34">
-    <span><b>FRIDAY</b> studio <em>Kunder</em></span>
+    <span><b>FRIDAY</b> studio</span>
   </a>
-  <div class="search"><input id="search" type="search" placeholder="Søg efter navn, firma, telefon …" aria-label="Søg"></div>
+  <nav class="views" aria-label="Visning">
+    <button type="button" data-view="overblik">Overblik</button>
+    <button type="button" data-view="salg">Salg</button>
+    <button type="button" data-view="projekter">Projekter</button>
+  </nav>
+  <div class="search"><input id="search" type="search" placeholder="Søg efter kunde …" aria-label="Søg"></div>
   <div class="me" role="group" aria-label="Hvem er du?">
-    <span>Jeg er</span>
     <button type="button" data-me="Jomaa">Jomaa</button>
     <button type="button" data-me="Ahmad">Ahmad</button>
   </div>
@@ -34,21 +38,19 @@
 </div>
 
 <main id="app">
-  <section class="upcoming" id="upcoming" hidden>
-    <h2>Kommende møder</h2>
-    <div class="up-list" id="upList"></div>
-  </section>
-
   <div class="filters">
-    <div class="tabs" id="ownerTabs" role="tablist">
+    <h1 id="viewTitle">Overblik</h1>
+    <div class="tabs" id="ownerTabs">
       <button type="button" data-owner="" class="on">Alle</button>
       <button type="button" data-owner="me">Mine</button>
       <button type="button" data-owner="none">Ingen ansvarlig</button>
     </div>
-    <label class="toggle"><input type="checkbox" id="showClosed"> Vis vundne og tabte</label>
+    <label class="toggle" id="lostToggle" hidden><input type="checkbox" id="showLost"> Vis tabte</label>
+    <label class="toggle" id="doneToggle" hidden><input type="checkbox" id="showDone"> Vis leverede</label>
   </div>
 
-  <div class="board" id="board"></div>
+  <div id="dash"></div>
+  <div class="board" id="board" hidden></div>
 </main>
 
 <div class="locked" id="locked" hidden>
@@ -58,7 +60,7 @@
   <p class="why" id="lockWhy"></p>
 </div>
 
-<!-- DETALJER -->
+<!-- KUNDE -->
 <aside class="drawer" id="drawer" aria-hidden="true">
   <div class="drawer-in" role="dialog" aria-modal="true" aria-labelledby="dTitle">
     <header class="d-head">
@@ -69,7 +71,7 @@
       <span class="saved" id="saved">Gemt</span>
       <button class="x" type="button" data-close aria-label="Luk">×</button>
     </header>
-    <div class="steps" id="dSteps"></div>
+    <div class="tracks" id="dSteps"></div>
     <div class="d-body" id="dBody"></div>
   </div>
 </aside>
@@ -97,7 +99,7 @@
       <label class="f"><span>Budget</span><input name="budget" placeholder="Fx 10.000–15.000 kr."></label>
       <label class="f"><span>Deadline</span><input name="deadline" type="date"></label>
     </div>
-    <label class="f"><span>Første note</span><textarea name="note" rows="3" placeholder="Hvad snakkede I om, da I mødte kunden?"></textarea></label>
+    <label class="f"><span>Hvad snakkede I om?</span><textarea name="note" rows="3" placeholder="Gemmes som første kontakt i loggen"></textarea></label>
     <p class="err" id="newErr"></p>
     <div class="m-foot">
       <button class="btn" type="button" data-close>Annuller</button>
@@ -109,6 +111,6 @@
 <div class="toast" id="toast" role="status"></div>
 
 <script src="config.js?v=4"></script>
-<script src="intern.js?v=4"></script>
+<script src="intern.js?v=6"></script>
 </body>
 </html>

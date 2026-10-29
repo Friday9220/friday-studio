@@ -17,7 +17,8 @@ Det tager cirka 10 minutter og er gratis.
 2. Åbn filen [`supabase/schema.sql`](supabase/schema.sql) her i projektet, kopier alt indholdet, og indsæt det.
 3. Tryk **Run**.
 4. Tryk **New query** igen, indsæt indholdet af [`supabase/adgang.sql`](supabase/adgang.sql), og tryk **Run**.
-5. Kør `select key from access_keys;`. Resultatet er **Jeres hemmelige nøgle**: en lang række bogstaver og tal. Kopier den, for du skal bruge den i trin 4.
+5. Gør det samme med [`supabase/dashboard.sql`](supabase/dashboard.sql).
+6. Kør `select key from access_keys;`. Resultatet er **Jeres hemmelige nøgle**: en lang række bogstaver og tal. Kopier den, for du skal bruge den i trin 4.
 
 Du kan altid finde nøglen igen på samme måde.
 
@@ -68,9 +69,12 @@ Vil I begge have mailen, så skriv Ahmads mail i feltet **CC** på FormSubmits s
 
 ## Sådan bruges siden
 
-- Vælg øverst, om du er **Jomaa** eller **Ahmad**. Siden husker det, og dit navn kommer på de noter, du skriver.
-- Kunderne står i kolonner efter fase: Ny henvendelse, Møde planlagt, Møde holdt, Tilbud sendt, Vundet og Tabt.
-- Tryk på en kunde for at åbne den. Her kan du sætte mødetidspunkt og ansvarlig, skrive i mødeloggen, og flytte kunden til en ny fase.
-- I mødeloggen vælger du, om noten er en **Samtale**, en **Idé**, et **Ønske**, **Næste skridt** eller en almindelig **Note**.
+- Vælg øverst, om du er **Jomaa** eller **Ahmad**. Siden husker det, og dit navn kommer på alt, hvad du skriver.
+- **Overblik** viser nye henvendelser, kommende møder, kunder der skal følges op, projekter i gang og den seneste aktivitet.
+- **Salg** viser kunderne fra Ny henvendelse til Tilbud sendt. Tabte kunder kan slås til.
+- **Projekter** viser vundne sager fra Opstart over Udvikling, Første gennemgang, Rettelser og Godkendelse til Online og leveret.
+- Tryk på en kunde for at åbne den. Øverst flytter du kunden mellem faserne. Hvert faseskift bliver skrevet i loggen.
+- Under **Ny kontakt** gemmer du hver gang, I har været i kontakt med kunden: møde, telefon, mail, besøg, SMS eller note. Skriv hvad I snakkede om, kundens idéer og ønsker og næste skridt, og sæt evt. en dato for opfølgning.
+- Gemmer du et møde på en kunde med et planlagt møde, flyttes kunden selv til Møde holdt.
 - **+ Ny kunde** opretter en kunde, I selv har mødt ude.
 - Siden henter nyt hvert halve minut, så I ser hinandens ændringer.
