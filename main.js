@@ -220,6 +220,47 @@
   }
 
   // ---------- BOOKING FORM ----------
+  // Gemmer bookingen i databasen, så den dukker op på den interne side.
+  // Uden opsætning (config.js er tom) gemmes den kun i denne browser som demo.
+  async function saveBooking(b) {
+    const row = {
+      source: 'website', name: b.navn, company: b.virksomhed || null, email: b.email, phone: b.telefon,
+      topics: b.emner, preferred_date: b.dato || null, preferred_time: b.tid || null, message: b.besked || null
+    };
+    const cfg = window.FRIDAY_CONFIG || {};
+    if (!cfg.supabaseUrl || !cfg.supabaseAnonKey) {
+      try {
+        const list = JSON.parse(localStorage.getItem('friday-demo-customers') || '[]');
+        list.push({ ...row, id: crypto.randomUUID(), status: 'ny', created_at: b.oprettet, updated_at: b.oprettet });
+        localStorage.setItem('friday-demo-customers', JSON.stringify(list));
+      } catch (_) {}
+      return;
+    }
+    const res = await fetch(cfg.supabaseUrl.replace(/\/$/, '') + '/rest/v1/customers', {
+      method: 'POST',
+      headers: {
+        apikey: cfg.supabaseAnonKey, Authorization: 'Bearer ' + cfg.supabaseAnonKey,
+        'Content-Type': 'application/json', Prefer: 'return=minimal'
+      },
+      body: JSON.stringify(row)
+    });
+    if (!res.ok) throw new Error('Booking blev ikke gemt: ' + res.status);
+    if (cfg.notifyEmail) notify(cfg.notifyEmail, b).catch(() => {});
+  }
+
+  // Sender en mail til jer om den nye booking. Fejler den, er bookingen stadig gemt.
+  function notify(to, b) {
+    return fetch('https://formsubmit.co/ajax/' + encodeURIComponent(to), {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        _subject: 'Ny booking: ' + (b.virksomhed || b.navn), _template: 'table', _captcha: 'false',
+        Navn: b.navn, Virksomhed: b.virksomhed, Email: b.email, Telefon: b.telefon,
+        Emner: b.emner.join(', '), Dato: b.dato, Tid: b.tid, Besked: b.besked
+      })
+    });
+  }
+
   const form = $('#bookForm');
   if (form) {
     const topics = $$('#topics .chip');
@@ -232,7 +273,7 @@
     const d = $('#fDate'); const tm = new Date(); tm.setDate(tm.getDate() + 1);
     d.min = tm.toISOString().slice(0, 10);
 
-    form.addEventListener('submit', e => {
+    form.addEventListener('submit', async e => {
       e.preventDefault();
       const f = e.target, msg = $('#formMsg');
       const name = f.navn.value.trim(), email = f.email.value.trim(), phone = f.telefon.value.trim();
@@ -245,7 +286,14 @@
         dato: f.dato.value, tid: f.tid.value, besked: f.besked.value.trim(),
         oprettet: new Date().toISOString()
       };
-      // TODO: send booking til det interne system, når det er bygget.
+      const btn = f.querySelector('[type=submit]');
+      if (btn) btn.disabled = true;
+      try { await saveBooking(booking); }
+      catch (err) {
+        if (btn) btn.disabled = false;
+        msg.textContent = 'Beklager, noget gik galt. Prøv igen, eller ring til os.';
+        return;
+      }
       window.dispatchEvent(new CustomEvent('friday:booking', { detail: booking }));
       $('#successText').textContent = `Tak, ${name.split(' ')[0]}. Vi vender tilbage på ${email} inden for 24 timer på hverdage og bekræfter dit møde.`;
       $('#contactGrid').classList.add('sent');

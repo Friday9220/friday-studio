@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Kunder · FRIDAY studio</title>
+<meta name="theme-color" content="#EEF1EC">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23A8E6C1'/%3E%3Cg transform='translate(6 6) scale(.81)'%3E%3Cg fill='%230F1F1A'%3E%3Cpath d='M13 54V24a14 14 0 0 1 14-14h17v13H27v7h12a6 6 0 0 1 0 12H27v12Z'/%3E%3Cpath d='M45 23c0-8.5 5.5-13.5 13-13.5 0 8.5-5.5 13.5-13 13.5Z'/%3E%3C/g%3E%3Cpath d='M47.5 20.5 55 13' stroke='%23A8E6C1' stroke-width='1.6' stroke-linecap='round'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="intern.css?v=1">
+</head>
+<body>
+
+<header class="top">
+  <a class="brand" href="intern.html" aria-label="FRIDAY studio, kunder">
+    <img src="assets/logo-mark.svg" alt="" width="34" height="34">
+    <span><b>FRIDAY</b> studio <em>Kunder</em></span>
+  </a>
+  <div class="search"><input id="search" type="search" placeholder="Søg efter navn, firma, telefon …" aria-label="Søg"></div>
+  <div class="me" role="group" aria-label="Hvem er du?">
+    <span>Jeg er</span>
+    <button type="button" data-me="Jomaa">Jomaa</button>
+    <button type="button" data-me="Ahmad">Ahmad</button>
+  </div>
+  <button class="btn primary" id="newBtn" type="button">+ Ny kunde</button>
+</header>
+
+<div class="demo" id="demoBar" hidden>
+  Du ser en demo. Kunderne gemmes kun i denne browser, indtil databasen er sat op efter guiden.
+  <button type="button" id="demoReset">Nulstil demo</button>
+</div>
+
+<main id="app">
+  <section class="upcoming" id="upcoming" hidden>
+    <h2>Kommende møder</h2>
+    <div class="up-list" id="upList"></div>
+  </section>
+
+  <div class="filters">
+    <div class="tabs" id="ownerTabs" role="tablist">
+      <button type="button" data-owner="" class="on">Alle</button>
+      <button type="button" data-owner="me">Mine</button>
+      <button type="button" data-owner="none">Ingen ansvarlig</button>
+    </div>
+    <label class="toggle"><input type="checkbox" id="showClosed"> Vis vundne og tabte</label>
+  </div>
+
+  <div class="board" id="board"></div>
+</main>
+
+<div class="locked" id="locked" hidden>
+  <img src="assets/logo-mark.svg" alt="" width="56" height="56">
+  <h1>Denne side er kun for FRIDAY studio</h1>
+  <p>Åbn siden med jeres hemmelige link for at se kunderne.</p>
+</div>
+
+<!-- DETALJER -->
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer-in" role="dialog" aria-modal="true" aria-labelledby="dTitle">
+    <header class="d-head">
+      <div>
+        <h2 id="dTitle"></h2>
+        <p id="dSub"></p>
+      </div>
+      <span class="saved" id="saved">Gemt</span>
+      <button class="x" type="button" data-close aria-label="Luk">×</button>
+    </header>
+    <div class="steps" id="dSteps"></div>
+    <div class="d-body" id="dBody"></div>
+  </div>
+</aside>
+
+<!-- NY KUNDE -->
+<div class="modal" id="modal" aria-hidden="true">
+  <form class="modal-in" id="newForm" role="dialog" aria-modal="true" aria-labelledby="mTitle" novalidate>
+    <header class="d-head">
+      <h2 id="mTitle">Ny kunde</h2>
+      <button class="x" type="button" data-close aria-label="Luk">×</button>
+    </header>
+    <div class="grid2">
+      <label class="f"><span>Navn *</span><input name="name" required autocomplete="off"></label>
+      <label class="f"><span>Virksomhed</span><input name="company" autocomplete="off"></label>
+      <label class="f"><span>Telefon</span><input name="phone" type="tel" autocomplete="off"></label>
+      <label class="f"><span>E-mail</span><input name="email" type="email" autocomplete="off"></label>
+      <label class="f wide"><span>Adresse</span><input name="address" autocomplete="off"></label>
+    </div>
+    <div class="f"><span>Hvad handler det om?</span><div class="chips" data-topics></div></div>
+    <div class="grid2">
+      <label class="f"><span>Fase</span><select name="status"></select></label>
+      <label class="f"><span>Ansvarlig</span><select name="owner"><option value="">Ingen</option><option>Jomaa</option><option>Ahmad</option></select></label>
+      <label class="f"><span>Møde</span><input name="meeting_at" type="datetime-local"></label>
+      <label class="f"><span>Mødested</span><input name="meeting_place" placeholder="Hos kunden, online …"></label>
+      <label class="f"><span>Budget</span><input name="budget" placeholder="Fx 10.000–15.000 kr."></label>
+      <label class="f"><span>Deadline</span><input name="deadline" type="date"></label>
+    </div>
+    <label class="f"><span>Første note</span><textarea name="note" rows="3" placeholder="Hvad snakkede I om, da I mødte kunden?"></textarea></label>
+    <p class="err" id="newErr"></p>
+    <div class="m-foot">
+      <button class="btn" type="button" data-close>Annuller</button>
+      <button class="btn primary" type="submit">Opret kunde</button>
+    </div>
+  </form>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script src="config.js?v=2"></script>
+<script src="intern.js?v=1"></script>
+</body>
+</html>
