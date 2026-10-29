@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=7">
+<link rel="stylesheet" href="styles.css?v=9">
 </head>
 <body class="load">
 
@@ -25,11 +25,10 @@
       </a>
       <nav class="nav-links" aria-label="Hovedmenu">
         <a href="#kunder">Kunder</a>
-        <a href="#ydelser">Ydelser</a>
         <a href="#demo">Prøv et ordresystem</a>
         <a href="#proces">Proces</a>
         <a href="#om-os">Om os</a>
-        <a href="priser.html">Priser</a>
+        <a href="ydelser.html">Ydelser og priser</a>
         <a href="#faq">Spørgsmål</a>
       </nav>
       <div style="display:flex;gap:8px;align-items:center">
@@ -38,11 +37,10 @@
       </div>
     </div>
     <div class="mobile-menu" id="mobileMenu">
-      <a href="#ydelser">Ydelser</a>
       <a href="#demo">Prøv et ordresystem</a>
       <a href="#proces">Proces</a>
       <a href="#om-os">Om os</a>
-      <a href="priser.html">Priser</a>
+      <a href="ydelser.html">Ydelser og priser</a>
       <a href="#faq">Spørgsmål</a>
       <a href="#kontakt" class="btn btn-accent">Book et gratis møde</a>
     </div>
@@ -56,22 +54,14 @@
       <p class="hero-sub fade">Hjemmesider, ordresystemer og grafisk design til restauranter, caféer og små butikker.</p>
       <div class="hero-actions fade">
         <a href="#kontakt" class="btn btn-accent">Book et gratis møde <span class="arr">→</span></a>
-        <a href="#ydelser" class="btn btn-glass">Se vores ydelser</a>
-      </div>
-      <div class="hero-foot fade">
-        <nav class="hero-svcs" aria-label="Ydelser">
-          <a href="#ydelser" data-open="0">Hjemmesider</a><a href="#ydelser" data-open="1">Ordresystemer</a><a href="#ydelser" data-open="2">Skræddersyede systemer</a><a href="#ydelser" data-open="3">Grafisk design</a>
-        </nav>
+        <a href="ydelser.html" class="btn btn-glass">Se ydelser og priser</a>
       </div>
     </div>
   </section>
 
   <!-- MARQUEE -->
   <div class="marquee" aria-hidden="true">
-    <div class="marquee-track">
-      <span>Pizzeriaer</span><span>Caféer</span><span>Restauranter</span><span>Bagerier</span><span>Frisører</span><span>Små butikker</span><span>Takeaway</span><span>Foodtrucks</span>
-      <span>Pizzeriaer</span><span>Caféer</span><span>Restauranter</span><span>Bagerier</span><span>Frisører</span><span>Små butikker</span><span>Takeaway</span><span>Foodtrucks</span>
-    </div>
+    <div class="marquee-track" id="marquee"><span>Pizzeriaer</span><span>Caféer</span><span>Restauranter</span><span>Bagerier</span><span>Frisører</span><span>Små butikker</span><span>Takeaway</span><span>Foodtrucks</span><span>Kaffebarer</span><span>Burgerbarer</span><span>Sushirestauranter</span><span>Isbutikker</span><span>Barer</span><span>Kiosker</span><span>Blomsterbutikker</span><span>Tøjbutikker</span><span>Delikatesser</span><span>Grillbarer</span><span>Shawarmabarer</span><span>Catering</span><span>Vinbarer</span><span>Skønhedsklinikker</span><span>Fitnesscentre</span><span>Håndværkere</span></div>
   </div>
 
   <!-- ABOUT / STATEMENT -->
@@ -316,7 +306,7 @@
       <div class="foot-top">
         <a href="#top" class="logo light"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18" fill="#A8E6C1"/><g transform="translate(6 6) scale(.81)"><g fill="#0F1F1A"><path d="M13 54V24a14 14 0 0 1 14-14h17v13H27v7h12a6 6 0 0 1 0 12H27v12Z"/><path d="M45 23c0-8.5 5.5-13.5 13-13.5 0 8.5-5.5 13.5-13 13.5Z"/></g><path d="M47.5 20.5 55 13" stroke="#A8E6C1" stroke-width="1.6" stroke-linecap="round"/></g></svg><span>FRIDAY <small>studio</small></span></a>
         <nav class="foot-links" aria-label="Footer">
-          <a href="#ydelser">Ydelser</a><a href="#demo">Demo</a><a href="#proces">Proces</a><a href="#om-os">Om os</a><a href="priser.html">Priser</a><a href="#faq">Spørgsmål</a><a href="#kontakt">Kontakt</a>
+          <a href="#ydelser">Ydelser</a><a href="#demo">Demo</a><a href="#proces">Proces</a><a href="#om-os">Om os</a><a href="ydelser.html">Ydelser og priser</a><a href="#faq">Spørgsmål</a><a href="#kontakt">Kontakt</a>
         </nav>
       </div>
       <div class="foot-bottom">
@@ -437,6 +427,19 @@
   // toast
   let tt;
   const toast = msg => { const t = $('#toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(tt); tt = setTimeout(() => t.classList.remove('show'), 2400); };
+
+  // marquee: repeat the list until it covers the screen, then double it for a seamless loop
+  const mq = $('#marquee');
+  const base = mq.innerHTML;
+  const buildMarquee = () => {
+    mq.innerHTML = base;
+    while (mq.scrollWidth < innerWidth + 200) mq.insertAdjacentHTML('beforeend', base);
+    mq.insertAdjacentHTML('beforeend', mq.innerHTML);
+    mq.style.animationDuration = (mq.scrollWidth / 2 / 60) + 's';
+  };
+  buildMarquee();
+  let mqW = innerWidth;
+  addEventListener('resize', () => { if (Math.abs(innerWidth - mqW) > 50) { mqW = innerWidth; buildMarquee(); } });
 
   // ---------- HERO VIDEO ----------
   // Free clips from Mixkit (Mixkit Stock Video Free License)
